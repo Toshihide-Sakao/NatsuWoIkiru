@@ -51,6 +51,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Background.cs" />
+    <Compile Include="DeleteBackground.cs" />
+    <Compile Include="String.cs" />
+  </ItemGroup>
   <ItemGroup />
 </Project>

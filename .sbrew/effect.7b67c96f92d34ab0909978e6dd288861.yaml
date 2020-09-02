@@ -1,0 +1,47 @@
+﻿FormatVersion: 6
+Name: "String 1"
+Script: "String"
+Config:
+  path:
+    Type: "System.String"
+    Value: "sb/ball.png"
+  startTime:
+    Type: "System.Single"
+    Value: "702"
+  reachHalftime:
+    Type: "System.Single"
+    Value: "2722"
+  endTime:
+    Type: "System.Single"
+    Value: "11826"
+  headScale:
+    Type: "System.Single"
+    Value: "0.15"
+  headStartScale:
+    Type: "System.Single"
+    Value: "0.075"
+  tailScale:
+    Type: "System.Single"
+    Value: "0.1"
+  tailStartScale:
+    Type: "System.Single"
+    Value: "0.05"
+  headColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.345098,0.6235294,0.9882353,0"
+  tailColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0"
+  startPos:
+    Type: "OpenTK.Vector2"
+    Value: "-120,240"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  f3a59e29ff8e442b9a72102ac48852a1:
+    Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
