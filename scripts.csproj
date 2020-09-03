@@ -54,7 +54,10 @@
   <ItemGroup>
     <Compile Include="Background.cs" />
     <Compile Include="DeleteBackground.cs" />
+    <Compile Include="Lyrics.cs" />
+    <Compile Include="SimplifiedLyrics.cs" />
     <Compile Include="String.cs" />
+    <Compile Include="Transition.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>
