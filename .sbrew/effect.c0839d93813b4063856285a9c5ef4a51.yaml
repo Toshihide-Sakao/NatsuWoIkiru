@@ -1,0 +1,17 @@
+﻿FormatVersion: 6
+Name: "ImportOsb 1"
+Script: "ImportOsb"
+Config:
+  Path:
+    Type: "System.String"
+    Value: "osbScripts/hontou.osb"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  96cc655e32214aeb81adbac60c505453:
+    Name: "Background"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

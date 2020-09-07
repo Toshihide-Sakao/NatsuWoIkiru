@@ -1,0 +1,32 @@
+﻿FormatVersion: 6
+Name: "BackgroundTwoSides 1"
+Script: "BackgroundTwoSides"
+Config:
+  BackgroundPath:
+    Type: "System.String"
+    Value: "sb/white.jpg"
+  StartTime:
+    Type: "System.Int32"
+    Value: "21264"
+  EndTime:
+    Type: "System.Int32"
+    Value: "29152"
+  Opacity:
+    Type: "System.Double"
+    Value: "1"
+  rightcolor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0.5803922,0.2117647,0"
+  leftcolor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.1843137,0.654902,0.9803922,0"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  a37157381de843919c289234d8b15770:
+    Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

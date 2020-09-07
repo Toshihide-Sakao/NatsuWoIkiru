@@ -53,7 +53,10 @@
   -->
   <ItemGroup>
     <Compile Include="Background.cs" />
+    <Compile Include="BackgroundFromSide.cs" />
+    <Compile Include="BackgroundTwoSides.cs" />
     <Compile Include="DeleteBackground.cs" />
+    <Compile Include="ImportOsb.cs" />
     <Compile Include="Lyrics.cs" />
     <Compile Include="LyricsTate.cs" />
     <Compile Include="SimplifiedLyrics.cs" />

@@ -100,12 +100,13 @@ namespace StorybrewScripts
             CreateBegText("フリをしていた", 17219, 20253, 130, 180, 0.87f, 1, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(255, 255, 255), true, colorRGB(255, 154, 59));
 
             //本当は
+            //CreateNorBegText("本当", 21264, 25309, 130, 240, 12, 4, OsbEasing.OutCubic, OsbEasing.InCubic, false, colorRGB(47, 167, 250), true, colorRGB(171, 224, 255));
 
-            CreateBegText("全部", 22613, 25983, 320, 150, 0.87f, 2, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(47, 167, 250));
-            CreateBegText("隠れているから", 22613, 25983, 310, 210, 0.87f, 2, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(47, 167, 250));
+            CreateBegText("全部", 22613, 25983, 333, 150, 0.87f, 0, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(255, 148, 54));
+            CreateBegText("隠れているから", 22613, 25983, 307, 210, 0.87f, 2, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(47, 167, 250));
 
-            CreateBegText("泥にまみれた", 26657, 31377, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
-            CreateBegText("強さを探した", 26657, 31377, 500, 260, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("泥にまみれた", 26657, 31377, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(252, 249, 197), true, colorRGB(0,0,0));
+            CreateBegText("強さを探した", 26657, 31377, 500, 260, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(252, 249, 197), true, colorRGB(0,0,0));
 /*
             勢いまかせの
 サイダー　
@@ -251,7 +252,11 @@ namespace StorybrewScripts
                 var sprite = backLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY));
                 var charBitmap = GetMapsetBitmap(texture.Path);
 
-                sprite.Scale(startTime, 0.5f * spriteScale);/*
+                if (fromWhatside != 4)
+                {
+                    sprite.Scale(startTime, 0.5f * spriteScale);
+                }
+                /*
                 sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
                 sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
                 if (enableBackColor)
@@ -296,6 +301,10 @@ namespace StorybrewScripts
                             break;
                         case 3:
                             moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing);
+                            break;
+                        case 4:
+                            sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
+                            sprite.Fade(outEasing, endTime, endTime + fadeEndDelay, 1, 0);
                             break;
                     }
                 }
@@ -372,6 +381,10 @@ namespace StorybrewScripts
                             break;
                         case 3:
                             moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing);
+                            break;
+                        case 4:
+                            sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
+                            sprite.Fade(outEasing, endTime, endTime + fadeEndDelay, 1, 0);
                             break;
                     }
                 }
