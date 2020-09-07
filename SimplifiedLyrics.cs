@@ -72,9 +72,6 @@ namespace StorybrewScripts
             // CreateText(startTime, endTime, position, origin, text)
 
             CreateText(0, 3000, new Vector2(320, 240), OsbOrigin.Centre, "Hello world.");
-            CreateText(4000, 7000, new Vector2(320, 240), OsbOrigin.Centre, "How are you?");
-            CreateText(0, 3000, new Vector2(320, 340), OsbOrigin.Centre, "こんにちは世界。");
-            CreateText(4000, 7000, new Vector2(320, 340), OsbOrigin.Centre, "お元気ですか？");
 
             // Any language is supported (as long as the fontName used supports the language)
         }

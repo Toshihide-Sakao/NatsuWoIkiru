@@ -1,0 +1,67 @@
+﻿FormatVersion: 6
+Name: "LyricsTate 1"
+Script: "LyricsTate"
+Config:
+  opacity:
+    Type: "System.Single"
+    Value: "1"
+  fontScale:
+    Type: "System.Int32"
+    Value: "30"
+  fadeStartDelay:
+    Type: "System.Single"
+    Value: "1000"
+  fadeEndDelay:
+    Type: "System.Single"
+    Value: "1000"
+  fadeBegEndDelay:
+    Type: "System.Single"
+    Value: "1000"
+  fontStyle:
+    Type: "System.Int32"
+    Value: "0"
+    AllowedValues:
+      Regular: "0"
+      Bold: "1"
+      Italic: "2"
+      Underline: "4"
+      Strikeout: "8"
+  enableGlow:
+    Type: "System.Boolean"
+    Value: "False"
+  glowRadius:
+    Type: "System.Int32"
+    Value: "30"
+  glowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,1,1,1"
+  outlineThickness:
+    Type: "System.Int32"
+    Value: "0"
+  outlineColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  shadowThickness:
+    Type: "System.Int32"
+    Value: "0"
+  shadowColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,1"
+  amountToMove:
+    Type: "System.Single"
+    Value: "40"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  83e28cd548554a6d96f7b2b52b4318ea:
+    Name: "text"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  9b08ca7d70c24dc69e0dc73243a9c6c9:
+    Name: "textBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

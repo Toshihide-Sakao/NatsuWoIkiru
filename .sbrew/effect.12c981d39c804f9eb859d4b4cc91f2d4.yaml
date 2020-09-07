@@ -1,9 +1,0 @@
-﻿FormatVersion: 6
-Name: "Lyrics 1"
-Script: "Lyrics"
-Config:
-  RandomSeed:
-    Type: "System.Int32"
-    Value: "0"
-    DisplayName: "Random seed"
-Layers:
