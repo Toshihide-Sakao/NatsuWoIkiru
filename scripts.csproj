@@ -60,6 +60,7 @@
     <Compile Include="Lyrics.cs" />
     <Compile Include="LyricsTate.cs" />
     <Compile Include="SimplifiedLyrics.cs" />
+    <Compile Include="SinWave.cs" />
     <Compile Include="String.cs" />
     <Compile Include="Transition.cs" />
   </ItemGroup>
