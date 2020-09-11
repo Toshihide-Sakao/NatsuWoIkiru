@@ -30,8 +30,25 @@ namespace StorybrewScripts
         {
 		    var layer = GetLayer("");
 
-            var sq = layer.CreateSprite(path, OsbOrigin.Centre, new Vector2(- 150, 240);
+            var sq = layer.CreateSprite(path, OsbOrigin.Centre, new Vector2(- 150, 240));
+
+            float duration = endTime - startTime;
             
+
+            for (int i = - 120; i < 760; i += 10)
+            {
+                double y = Math.Sin((i / 30) * 50);
+            }
+            
+
+            
+        }
+
+        public float sinYPos(float xPos) 
+        {
+            double y = Math.Sin((xPos / 30) * 50);
+
+            return (float)y;
         }
     }
 }
