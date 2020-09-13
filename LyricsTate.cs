@@ -95,7 +95,7 @@ namespace StorybrewScripts
             
             CreateBegText("勢いまかせの", 11826, 13511, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
             CreateBegText("サイダー", 11826, 13511, 500, 260, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
-            CreateNorBegText("ベタついたまま", 14186, 16377, 100, 350, 0.87f, 0, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(47, 167, 250), false, colorRGB(179, 224, 255));
+            CreateNorBegText("ベタついたまま", 14186, 16377, 100, 350, 0.87f, 0, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(47, 167, 250), true, colorRGB(0,0,0));
             CreateBegText("透明な", 17219, 20253, 550, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 255, 255), true, colorRGB(255, 154, 59));
             CreateBegText("フリをしていた", 17219, 20253, 130, 180, 0.87f, 1, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(255, 255, 255), true, colorRGB(255, 154, 59));
 
@@ -107,6 +107,12 @@ namespace StorybrewScripts
 
             CreateBegText("泥にまみれた", 26657, 31377, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(252, 249, 197), true, colorRGB(0,0,0));
             CreateBegText("強さを探した", 26657, 31377, 500, 260, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(252, 249, 197), true, colorRGB(0,0,0));
+
+
+            CreateBegText("まっすぐな視線を", 33399, 44523, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
+            CreateBegText("こちらへ飛ばして", 36096, 44523, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
+            CreateBegText("夏の分だけ輝いた", 38792, 44523, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
+            CreateBegText("君に恋した", 41995, 44523, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
 /*
             勢いまかせの
 サイダー　
@@ -123,10 +129,10 @@ namespace StorybrewScripts
 強さを探した
 
 /tokubetsu
-まっすぐな視線を
-こちらへ飛ばして
-夏の分だけ輝いた
-君に恋した
+"まっすぐな視線を", 33399, 43848
+"こちらへ飛ばして", 36096, 43848, 580, 320, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
+"夏の分だけ輝いた", 38792, 43848, 250, 320, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
+"君に恋した", 41995, 43848, 180, 320, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
 /-------
 
 
@@ -232,7 +238,7 @@ namespace StorybrewScripts
         // lyrics code
 
         public void CreateNorBegText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, int fromWhatside /*0 top, 1 right, 2 bottom, 3 left*/, OsbEasing inEasing, OsbEasing outEasing
-        , bool enableBackColor, Color4 backColor, bool enableColor, Color4 textColor) 
+        , bool enableBackColor, Color4 backColor, bool enableColor, Color4 textColor, bool customWidth = false) 
         {
             char[] textChars = text.ToCharArray(0, text.Length);
 
@@ -256,13 +262,21 @@ namespace StorybrewScripts
                 {
                     sprite.Scale(startTime, 0.5f * spriteScale);
                 }
+                if (!customWidth) 
+                {
+                    square.Scale(startTime, 40 * spriteScale);
+                }
+                else
+                {
+                    square.ScaleVec(startTime, 5, 40 * spriteScale);
+                    square.MoveX(startTime, startX + 40 * spriteScale );
+                }
                 /*
                 sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
                 sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
                 if (enableBackColor)
                 {
-                    square.Scale(startTime, 40 * spriteScale);
-                    square.Color(startTime, backColor);
+                    
 
                     switch (fromWhatside)
                     {
@@ -316,7 +330,7 @@ namespace StorybrewScripts
         }
 
         public void CreateBegText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, int fromWhatside /*0 top, 1 right, 2 bottom, 3 left*/, OsbEasing inEasing, OsbEasing outEasing
-        , bool enableBackColor, Color4 backColor, bool enableColor, Color4 textColor)
+        , bool enableBackColor, Color4 backColor, bool enableColor, Color4 textColor, bool customWidth = false )
         {
             char[] textChars = text.ToCharArray(0, text.Length);
 
@@ -328,6 +342,11 @@ namespace StorybrewScripts
                 float offset = 30 * spriteScale;
 
                 float Ypos = startY + offset *i;
+                float sqXpos = startX;
+                if (customWidth)
+                {
+                    sqXpos += 8;
+                }
 
                 var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(startX, Ypos));
                 var squareBitmap = GetMapsetBitmap(sqPath);
@@ -339,9 +358,21 @@ namespace StorybrewScripts
                 sprite.Scale(startTime, 0.5f * spriteScale);/*
                 sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
                 sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
-                if (enableBackColor)
+
+                if (!customWidth) 
                 {
                     square.Scale(startTime, 40 * spriteScale);
+                }
+                else
+                {
+                    square.ScaleVec(startTime, 2, 40 * spriteScale);
+                    square.Fade(startTime, 0.8f);
+                    square.MoveX(startTime, sqXpos);
+                }
+
+                if (enableBackColor)
+                {
+                    
                     square.Color(startTime, backColor);
 
                     switch (fromWhatside)
@@ -353,7 +384,7 @@ namespace StorybrewScripts
                             break;
                         case 1:
                             moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing);
-                            moveFromRight(square, startTime, endTime, startX, inEasing, outEasing);
+                            moveFromRight(square, startTime, endTime, sqXpos, inEasing, outEasing);
                             break;
                         case 2:
                             moveFromBot(sprite, startTime, endTime, Ypos, inEasing, outEasing);
@@ -361,7 +392,7 @@ namespace StorybrewScripts
                             break;
                         case 3:
                             moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing);
-                            moveFromLeft(square, startTime, endTime, startX, inEasing, outEasing);
+                            moveFromLeft(square, startTime, endTime, sqXpos, inEasing, outEasing);
                             break;
                     }
                 }
