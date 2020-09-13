@@ -57,6 +57,7 @@
     <Compile Include="BackgroundFromSide.cs" />
     <Compile Include="BackgroundTwoSides.cs" />
     <Compile Include="DeleteBackground.cs" />
+    <Compile Include="Flash.cs" />
     <Compile Include="Girl.cs" />
     <Compile Include="ImportOsb.cs" />
     <Compile Include="Lyrics.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="SinWave.cs" />
     <Compile Include="String.cs" />
     <Compile Include="Transition.cs" />
+    <Compile Include="WithLyrics.cs" />
   </ItemGroup>
   <ItemGroup />
 </Project>

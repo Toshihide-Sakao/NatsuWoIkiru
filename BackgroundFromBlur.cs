@@ -38,16 +38,19 @@ namespace StorybrewScripts
         public override void Generate()
         {
 
-            var bitmap = GetMapsetBitmap(blurPath);
+            var bitmap = GetMapsetBitmap(bgPath);
+
+            var blurBg = GetLayer("").CreateSprite(blurPath, OsbOrigin.Centre);
+            blurBg.Scale(StartTime, 854.0f / bitmap.Width);
+            blurBg.Fade(StartTime, StartTime + 100, 0, Opacity);
+            blurBg.Fade(StartTime + 200, StartNormalTime, Opacity, 0);
+
             var bg = GetLayer("").CreateSprite(bgPath, OsbOrigin.Centre);
-            bg.Scale(StartTime, 854.0f / bitmap.Height);
+            bg.Scale(StartTime, 854.0f / bitmap.Width);
             bg.Fade(StartTime, StartTime + 200, 0, Opacity);
             bg.Fade(EndNormalTime, EndTime, Opacity, 0);
             
-            var blurBg = GetLayer("").CreateSprite(blurPath, OsbOrigin.Centre);
-            blurBg.Scale(StartTime, 854.0f / bitmap.Height);
-            blurBg.Fade(StartTime, StartTime + 100, 0, Opacity);
-            blurBg.Fade(StartTime + 200, StartNormalTime, Opacity, 0);
+            
 
             
         }
