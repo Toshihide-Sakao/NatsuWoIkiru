@@ -4,7 +4,7 @@ Script: "WithLyrics"
 Config:
   borderPath:
     Type: "System.String"
-    Value: "sb/white.jpg"
+    Value: "sb/border.png"
   image1path:
     Type: "System.String"
     Value: "sb/bloonGirl.png"
