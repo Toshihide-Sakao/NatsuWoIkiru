@@ -46,62 +46,50 @@ namespace StorybrewScripts
             switch (fromWhere)
             {
                 case 0:
-                    moveFromTop(image, border, start, end, endPos.Y, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromTop(image, start, end, endPos.Y, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromTop(border, start, end, endPos.Y, OsbEasing.OutQuart, OsbEasing.InQuint, 1000);
                     break;
                 case 1:
-                    moveFromRight(image, border, start, end, endPos.X, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromRight(image, start, end, endPos.X, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromRight(border, start, end, endPos.X, OsbEasing.OutQuart, OsbEasing.InQuint, 1000);
                     break;
                 case 2:
-                    moveFromBot(image, border, start, end, endPos.Y, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromBot(image, start, end, endPos.Y, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromBot(border, start, end, endPos.Y, OsbEasing.OutQuart, OsbEasing.InQuint, 1000);
                     break;
                 case 3:
-                    moveFromLeft(image, border, start, end, endPos.X, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromLeft(image, start, end, endPos.X, OsbEasing.OutCubic, OsbEasing.InExpo, 1000);
+                    moveFromLeft(border, start, end, endPos.X, OsbEasing.OutQuart, OsbEasing.InQuint, 1000);
                     break;
             }
         }
 
-        public void moveFromLeft(OsbSprite image, OsbSprite border, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
+        public void moveFromLeft(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
         {
-            image.MoveX(inEasing, startTime, startTime + fadeTime, -250, startX);
-            image.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX + 4);
-            image.MoveX(outEasing, endTime, endTime + fadeTime, startX + 4, 900);
-
-            border.MoveX(inEasing, startTime, startTime + fadeTime, -250, startX);
-            border.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX + 4);
-            border.MoveX(outEasing, endTime, endTime + fadeTime, startX + 4, 900);
+            sprite.MoveX(inEasing, startTime, startTime + fadeTime, -400, startX);
+            sprite.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX + 4);
+            sprite.MoveX(outEasing, endTime, endTime + fadeTime, startX + 4, 1000);
         }
 
-        public void moveFromRight(OsbSprite image, OsbSprite border, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
+        public void moveFromRight(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
         {
-            image.MoveX(inEasing, startTime, startTime + fadeTime, 900, startX);
-            image.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX - 4);
-            image.MoveX(outEasing, endTime, endTime + fadeTime, startX - 4, -250);
-
-            border.MoveX(inEasing, startTime, startTime + fadeTime, 900, startX);
-            border.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX - 4);
-            border.MoveX(outEasing, endTime, endTime + fadeTime, startX - 4, -250);
+            sprite.MoveX(inEasing, startTime, startTime + fadeTime, 1000, startX);
+            sprite.MoveX(OsbEasing.None, startTime + fadeTime, endTime, startX, startX - 4);
+            sprite.MoveX(outEasing, endTime, endTime + fadeTime, startX - 4, -400);
         }
 
-        public void moveFromTop(OsbSprite image, OsbSprite border, float startTime, float endTime, float Ypos, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
+        public void moveFromTop(OsbSprite sprite, float startTime, float endTime, float Ypos, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
         {
-            image.MoveY(inEasing, startTime, startTime + fadeTime, 600, Ypos);
-            image.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos - 4);
-            image.MoveY(outEasing, endTime, endTime + fadeTime, Ypos - 4, -100);
-
-            border.MoveY(inEasing, startTime, startTime + fadeTime, 600, Ypos);
-            border.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos - 4);
-            border.MoveY(outEasing, endTime, endTime + fadeTime, Ypos - 4, -100);
+            sprite.MoveY(inEasing, startTime, startTime + fadeTime, 700, Ypos);
+            sprite.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos - 4);
+            sprite.MoveY(outEasing, endTime, endTime + fadeTime, Ypos - 4, -300);
         }
 
-        public void moveFromBot(OsbSprite image, OsbSprite border, float startTime, float endTime, float Ypos, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
+        public void moveFromBot(OsbSprite sprite, float startTime, float endTime, float Ypos, OsbEasing inEasing, OsbEasing outEasing, float fadeTime) 
         {
-            image.MoveY(inEasing, startTime, startTime + fadeTime, -100, Ypos);
-            image.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos + 4);
-            image.MoveY(outEasing, endTime, endTime + fadeTime, Ypos + 4, 600);
-
-            border.MoveY(inEasing, startTime, startTime + fadeTime, -100, Ypos);
-            border.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos + 4);
-            border.MoveY(outEasing, endTime, endTime + fadeTime, Ypos + 4, 600);
+            sprite.MoveY(inEasing, startTime, startTime + fadeTime, -300, Ypos);
+            sprite.MoveY(OsbEasing.None, startTime + fadeTime, endTime, Ypos, Ypos + 4);
+            sprite.MoveY(outEasing, endTime, endTime + fadeTime, Ypos + 4, 700);
         }
     }
 }

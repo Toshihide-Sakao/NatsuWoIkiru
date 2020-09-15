@@ -30,6 +30,9 @@ namespace StorybrewScripts
         public Color4 backColor;
 
         [Configurable]
+        public Color4 backColorUnder;
+
+        [Configurable]
         public float startGirlScale = 0.5f;
 
         [Configurable]
@@ -44,6 +47,12 @@ namespace StorybrewScripts
 
             background.ScaleVec(startTime + 300, 854, 480);
             background.Color(startTime + 300, endTime + 500, backColor, backColor);
+
+            var backgroundUnder = layer.CreateSprite(pixelPath, OsbOrigin.TopCentre, new Vector2(320, 320));
+
+            backgroundUnder.ScaleVec(startTime + 300, 854, 160);
+            backgroundUnder.Color(startTime + 300, endTime + 500, backColorUnder, backColorUnder);
+            backgroundUnder.Fade(startTime + 300, 0.6f);
 
 		    var flash = layer.CreateSprite(pixelPath, OsbOrigin.Centre);
 

@@ -17,12 +17,15 @@ Config:
   backColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.3882353,0.6745098,1,0"
+  backColorUnder:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "1,0.7450981,0.4117647,0"
   startGirlScale:
     Type: "System.Single"
-    Value: "0.25"
+    Value: "0.22"
   endGirlScale:
     Type: "System.Single"
-    Value: "0.26"
+    Value: "0.24"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
