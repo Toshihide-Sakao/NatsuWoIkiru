@@ -1,0 +1,9 @@
+﻿FormatVersion: 6
+Name: "Kiai3d 1"
+Script: "Kiai3d"
+Config:
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:

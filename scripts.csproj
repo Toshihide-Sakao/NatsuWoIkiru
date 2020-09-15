@@ -60,6 +60,7 @@
     <Compile Include="Flash.cs" />
     <Compile Include="Girl.cs" />
     <Compile Include="ImportOsb.cs" />
+    <Compile Include="Kiai3d.cs" />
     <Compile Include="Lyrics.cs" />
     <Compile Include="LyricsTate.cs" />
     <Compile Include="SimplifiedLyrics.cs" />
