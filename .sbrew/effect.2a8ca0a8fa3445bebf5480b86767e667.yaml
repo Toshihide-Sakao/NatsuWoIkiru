@@ -1,0 +1,26 @@
+﻿FormatVersion: 6
+Name: "Background 4"
+Script: "Background"
+Config:
+  BackgroundPath:
+    Type: "System.String"
+    Value: "sb/white.jpg"
+  StartTime:
+    Type: "System.Int32"
+    Value: "45534"
+  EndTime:
+    Type: "System.Int32"
+    Value: "77893"
+  Opacity:
+    Type: "System.Double"
+    Value: "1"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  86a86623c9054065868238522215650b:
+    Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
