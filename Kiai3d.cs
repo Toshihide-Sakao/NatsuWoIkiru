@@ -17,7 +17,13 @@ namespace StorybrewScripts
     {
         public override void Generate()
         {
-            
+
+            PerspectiveCamera camera = new PerspectiveCamera();
+
+            camera.NearClip.Add(0, 0.1f);
+            camera.FarClip.Add(0, 22500);
+            camera.NearFade.Add(0, 0);
+
         }
     }
 }
