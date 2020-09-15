@@ -130,10 +130,10 @@ namespace StorybrewScripts
             CreateBegText("涙を見つけた", 103511, 110084, 333, 150, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
 
             //bruh
-            CreateBegText("まっすぐな視線が", 110253, 122051, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("放物線描いて", 114253, 122051, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("何度も青く染まる", 118253, 122051, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("君にくらくらした", 120253, 122051, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("まっすぐな視線が", 110253, 120702, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("放物線描いて", 112950, 120702, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("何度も青く染まる", 115646, 120702, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("君にくらくらした", 118170, 120702, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
 
 /*
 まっすぐな視線が, 110253, 122051
