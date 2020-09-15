@@ -17,6 +17,9 @@ Config:
   backColor:
     Type: "OpenTK.Graphics.Color4"
     Value: "0.6901961,1,0.9176471,0"
+  backColorUnder:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0,0,0,0"
   startGirlScale:
     Type: "System.Single"
     Value: "0.25"
