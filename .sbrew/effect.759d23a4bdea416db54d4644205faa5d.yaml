@@ -5,15 +5,6 @@ Config:
   borderPath:
     Type: "System.String"
     Value: "sb/border.png"
-  image1path:
-    Type: "System.String"
-    Value: "sb/bloonGirl.png"
-  image2path:
-    Type: "System.String"
-    Value: ""
-  image3path:
-    Type: "System.String"
-    Value: ""
   RandomSeed:
     Type: "System.Int32"
     Value: "0"

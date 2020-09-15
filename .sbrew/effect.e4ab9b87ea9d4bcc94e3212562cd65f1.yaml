@@ -22,10 +22,10 @@ Config:
     Value: "0,0,0,0"
   startGirlScale:
     Type: "System.Single"
-    Value: "0.25"
+    Value: "0.2"
   endGirlScale:
     Type: "System.Single"
-    Value: "0.26"
+    Value: "0.22"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"

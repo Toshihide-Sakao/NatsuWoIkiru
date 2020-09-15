@@ -17,28 +17,53 @@ namespace StorybrewScripts
         [Configurable]
         public string borderPath;
 
-        [Configurable]
-        public string image1path;
+        // [Configurable]
+        // public string image1path;
 
-        [Configurable]
-        public string image2path;
+        // [Configurable]
+        // public string image2path;
 
-        [Configurable]
-        public string image3path;
+        // [Configurable]
+        // public string image3path;
+
+        // [Configurable]
+        // public float image1Scale;
+
+        // [Configurable]
+        // public Vector2 border1Scale;
+
+        // [Configurable]
+        // public float image2Scale;
+
+        // [Configurable]
+        // public Vector2 border2Scale;
+
+        // [Configurable]
+        // public float image3Scale;
+
+        // [Configurable]
+        // public Vector2 border3Scale;
 
 
         public override void Generate()
         {
 		    var layer = GetLayer("");
             
-            Vector2 image1pos = new Vector2(300, 240);
-            var image1 = layer.CreateSprite(image1path, OsbOrigin.Centre, image1pos);
-            var border = layer.CreateSprite(borderPath, OsbOrigin.Centre, image1pos);
+            allshit(11826, 13511, "sb/Ramune.png", 250, 240, 0.43f, 1.6f, 1.8f, 3);
+            allshit(14186, 16377, "sb/HatOver.png", 300, 240, 0.4f, 2, 2.1f, 0);
+            allshit(17219, 20253, "sb/HatRight.png", 320, 240, 0.3f, 2, 2, 1);
+            allshit(26657, 31377, "sb/doroCut.png", 290, 240, 1.1f, 1.4f, 1.8f, 3);
 
-            imageMover(11826, 13511, image1, border, image1pos, 3);
-            image1.Scale(11826, 0.1f);
-            border.Scale(11826, 1);
-            
+        }
+
+        public void allshit(float startTime, float endTime, string imagePath, float imageXPos, float imageYPos, float imageScale, float borderXScale, float bordeYScale, int FromWhere) 
+        {
+            var image = GetLayer("").CreateSprite(imagePath, OsbOrigin.Centre, new Vector2(imageXPos, imageYPos));
+            var border = GetLayer("").CreateSprite(borderPath, OsbOrigin.Centre, new Vector2(imageXPos, imageYPos));
+
+            imageMover(startTime, endTime, image, border, new Vector2(imageXPos, imageYPos), FromWhere);
+            image.Scale(startTime, imageScale);
+            border.ScaleVec(startTime, borderXScale, bordeYScale);
         }
         
         public void imageMover(float start, float end, OsbSprite image, OsbSprite border, Vector2 endPos, int fromWhere) 
