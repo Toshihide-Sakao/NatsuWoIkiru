@@ -1,0 +1,35 @@
+﻿FormatVersion: 6
+Name: "Girl 2"
+Script: "Girl"
+Config:
+  girlPath:
+    Type: "System.String"
+    Value: "sb/YukataGirlCut.png"
+  pixelPath:
+    Type: "System.String"
+    Value: "sb/white.jpg"
+  startTime:
+    Type: "System.Single"
+    Value: "110253"
+  endTime:
+    Type: "System.Single"
+    Value: "122051"
+  backColor:
+    Type: "OpenTK.Graphics.Color4"
+    Value: "0.6901961,1,0.9176471,0"
+  startGirlScale:
+    Type: "System.Single"
+    Value: "0.25"
+  endGirlScale:
+    Type: "System.Single"
+    Value: "0.26"
+  RandomSeed:
+    Type: "System.Int32"
+    Value: "0"
+    DisplayName: "Random seed"
+Layers:
+  fec18fe8551c4b91ad8fddcb002dd5b6:
+    Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
