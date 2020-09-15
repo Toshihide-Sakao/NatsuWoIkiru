@@ -49,9 +49,9 @@ namespace StorybrewScripts
         {
 		    var layer = GetLayer("");
             
-            allshit(11826, 13511, "sb/Ramune.png", 250, 240, 0.43f, 1.6f, 1.8f, 3);
-            allshit(14186, 16377, "sb/HatOver.png", 300, 240, 0.4f, 2, 2.1f, 0);
-            allshit(17219, 20253, "sb/HatRight.png", 320, 240, 0.3f, 2, 2, 1);
+            allshit(11826, 13511, "sb/Ramune.png", 250, 240, 0.4f, 1.4f, 1.7f, 3);
+            allshit(14186, 16377, "sb/HatOver.png", 300, 240, 0.35f, 1.8f, 1.8f, 0);
+            allshit(17219, 20253, "sb/HatRight.png", 320, 240, 0.28f, 1.9f, 1.9f, 1);
             allshit(26657, 31377, "sb/doroCut.png", 290, 240, 1.1f, 1.4f, 1.8f, 3);
 
         }
