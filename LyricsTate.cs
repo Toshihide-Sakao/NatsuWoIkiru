@@ -113,6 +113,35 @@ namespace StorybrewScripts
             CreateBegText("こちらへ飛ばして", 36096, 44523, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
             CreateBegText("夏の分だけ輝いた", 38792, 44523, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
             CreateBegText("君に恋した", 41995, 44523, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
+
+            //
+
+            CreateBegText("今は気が抜けた", 88680, 90702, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("サイダー", 88680, 90702, 500, 260, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("どうか笑って", 91040, 93736, 333, 150, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("誰よりも", 94073, 97444, 333, 150, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("近くで見てた", 94073, 97444, 333, 150, 0.87f, 1, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+
+            //本当
+            CreateBegText("どこにあるのか", 99466, 103174, 333, 150, 0.87f, 0, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(255, 148, 54));
+            CreateBegText("と探して", 99466, 103174, 307, 210, 0.87f, 2, OsbEasing.OutQuart, OsbEasing.InExpo, false, colorRGB(47, 167, 250), true, colorRGB(47, 167, 250));
+
+            CreateBegText("汗にまみれた", 103511, 110084, 333, 150, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateBegText("涙を見つけた", 103511, 110084, 333, 150, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+
+            //bruh
+            CreateBegText("まっすぐな視線が", 110253, 120702, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("放物線描いて", 112950, 120702, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("何度も青く染まる", 115646, 120702, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("君にくらくらした", 118170, 120702, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+
+/*
+まっすぐな視線が, 110253, 122051
+放物線描いて
+何度も青く染まる
+君にくらくらした
+*/
+            
 /*
             勢いまかせの
 サイダー　
@@ -146,23 +175,25 @@ namespace StorybrewScripts
 君の続きが見たい　逞しくあれ
 
 
-今は気が抜けた
+今は気が抜けた, 88680, 90702
 サイダー　
+"どうか笑って", 91040, 93736
 
-どうか笑って
-
-
-誰よりも
+誰よりも, 94073, 97444
 近くで見てた
-“本当”はどこに
-あるのかと探して
-汗にまみれた
+
+“本当”
+はどこにあるのか, 99466, 103174
+と探して, 99466, 103174
+
+汗にまみれた, 103511, 110084
 涙を見つけた
 
 
-まっすぐな視線が
+まっすぐな視線が, 110253, 122051
 放物線描いて
-何度も青く染まる君にくらくらした
+何度も青く染まる
+君にくらくらした
 
 
 夏を生きる
