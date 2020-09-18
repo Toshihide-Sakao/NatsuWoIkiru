@@ -114,6 +114,9 @@ namespace StorybrewScripts
             CreateBegText("夏の分だけ輝いた", 38792, 44523, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
             CreateBegText("君に恋した", 41995, 44523, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
 
+
+            CreateBigText("夏を生きる", 45534, 49579, 260, 240, 2, Color.Black);
+
             //
 
             CreateBegText("今は気が抜けた", 88680, 90365, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
@@ -267,6 +270,27 @@ namespace StorybrewScripts
         }
 
         // lyrics code
+
+        public void CreateBigText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 fontColor)
+        {
+            char[] textChars = text.ToCharArray(0, text.Length);
+
+            var sabiTextLayer = GetLayer("sabiText");
+            var sabiBackLayer = GetLayer("sabiBack");
+
+            for (int i = 0; i < textChars.Length; i++)
+            {
+                float offset = 30 * spriteScale;
+
+                float Xpos = startX + offset *i;
+
+                var texture = font.GetTexture(textChars[i].ToString());
+                var sprite = sabiTextLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY));
+
+                sprite.Color(startTime, fontColor);
+                sprite.Scale(startTime, endTime, spriteScale, spriteScale);
+            }
+        }
 
         public void CreateNorBegText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, int fromWhatside /*0 top, 1 right, 2 bottom, 3 left*/, OsbEasing inEasing, OsbEasing outEasing
         , bool enableBackColor, Color4 backColor, bool enableColor, Color4 textColor, bool customWidth = false) 

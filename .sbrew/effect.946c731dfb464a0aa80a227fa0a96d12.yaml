@@ -65,3 +65,13 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  6bfbff3e9338435b887641ec66dc92f2:
+    Name: "sabiText"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  f55a2167d4a24cd69a507eee1f479974:
+    Name: "sabiBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
