@@ -1,0 +1,20 @@
+[Events]
+//Background and Video events
+//Storyboard Layer 0 (Background)
+Sprite,Background,Centre,"sb\lyrics\hon.png",130,240
+ C,0,21264,,171,224,255
+ S,0,21264,,0.45
+ M,10,21264,22264,125,-400,125,163
+ M,0,22264,26152,125,163,125,183
+ M,18,26152,26910,125,183,125,700
+Sprite,Background,Centre,"sb\lyrics\tou.png",490,240
+ C,0,21264,,255, 190, 133
+ S,0,21264,,0.45
+ M,10,21264,22264,505,700,505,290
+ M,0,22264,26152,505,290,505,270
+ M,18,26152,26910,505,270,505,-400
+//Storyboard Layer 1 (Fail)
+//Storyboard Layer 2 (Pass)
+//Storyboard Layer 3 (Foreground)
+//Storyboard Layer 4 (Overlay)
+//Storyboard Sound Samples

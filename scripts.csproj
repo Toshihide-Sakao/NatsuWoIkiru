@@ -64,6 +64,8 @@
     <Compile Include="Kiai3d.cs" />
     <Compile Include="Lyrics.cs" />
     <Compile Include="LyricsTate.cs" />
+    <Compile Include="Particles.cs" />
+    <Compile Include="SabiBalls.cs" />
     <Compile Include="SabiLyrics.cs" />
     <Compile Include="Seed.cs" />
     <Compile Include="SimplifiedLyrics.cs" />

@@ -51,6 +51,7 @@ namespace StorybrewScripts
             var bg = GetLayer("").CreateSprite(BackgroundPath, OsbOrigin.Centre);
             bg.ScaleVec(StartTime, 1000.0f / bitmap.Width, 600.0f / bitmap.Height);
             bg.Color(StartTime, EndTime + fadeEndDelay, BackgroundColor, BackgroundColor);
+            bg.Fade(StartTime, Opacity);
             
             switch (fromWhere)
             {

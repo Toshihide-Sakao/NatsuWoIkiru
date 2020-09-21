@@ -75,10 +75,12 @@ namespace StorybrewScripts
         public float amountToMove = 40;
 
         private FontGenerator font;
+        private FontGenerator bigFont;
 
         public override void Generate()
         {
             font = FontGenerator("sb/lyrics");
+            bigFont = BigFontGenerator("sb/biglyrics");
             // You should write the lyrics in this function
 
             // The 'CreateText' function's parameters should be in this order (for reference):
@@ -115,7 +117,7 @@ namespace StorybrewScripts
             CreateBegText("君に恋した", 41995, 44523, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
 
 
-            CreateBigText("夏を生きる", 45534, 49579, 260, 240, 2, Color.Black);
+            CreateNatsuText("夏を生きる", 45534, 50084, 320, 240);
 
             //
 
@@ -264,12 +266,142 @@ namespace StorybrewScripts
             return font;
         }
 
+        FontGenerator BigFontGenerator(string output)
+        {
+            var bigFont = LoadFont(output, new FontDescription()
+            {
+                FontPath = fontName,
+                FontSize = 150,
+                Color = Color4.White,
+                Padding = Vector2.Zero,
+                FontStyle = fontStyle,
+                TrimTransparency = true,
+                EffectsOnly = false,
+                Debug = false,
+            },
+            new FontGlow()
+            {
+                Radius = !enableGlow ? 0 : glowRadius,
+                Color = glowColor,
+            },
+            new FontOutline()
+            {
+                Thickness = outlineThickness,
+                Color = outlineColor,
+            },
+            new FontShadow()
+            {
+                Thickness = shadowThickness,
+                Color = shadowColor,
+            });
+
+            return bigFont;
+        }
+
         public Color4 colorRGB(float r, float g, float b) 
         {
             return new Color4(r / 255, g / 255, b / 255, 1);
         }
 
         // lyrics code
+
+        public void CreateNatsuText(string text, int startTime, int endTime, float startX, float startY)
+        {
+            char[] textChars = text.ToCharArray(0, text.Length);
+
+            var nastuLayer = GetLayer("natsu");
+            var backNatsuLayer = GetLayer("backNatsu");
+
+            var texture = bigFont.GetTexture(textChars[0].ToString());
+            var natsu = nastuLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, 550));
+            var nastuBack = backNatsuLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(startX, 650));
+
+            int nastuEndTime = 46714;
+            int nextTime = 47219;
+            int uStart = 48062;
+            int uuStart = 48568;
+            int uuEnd = 48905;
+            int uuuuStart = 49242;
+            int uuuuEnd = 49579;
+
+            natsu.MoveY(OsbEasing.OutQuint, startTime, nastuEndTime, 550, startY);
+            natsu.Scale(startTime, 1);
+            nastuBack.MoveY(OsbEasing.OutQuint, startTime, nastuEndTime, 700, startY);
+            nastuBack.ScaleVec(OsbEasing.OutExpo, startTime, nastuEndTime, 300, 300, 400, 400);
+            nastuBack.Color(startTime, colorRGB(39, 127, 242));
+            nastuBack.Rotate(startTime, MathHelper.DegreesToRadians(45));
+            nastuBack.Fade(startTime, 0.5f);
+
+            natsu.MoveX(OsbEasing.InOutBack, nastuEndTime, nextTime, startX, startX - 200);
+            natsu.Scale(OsbEasing.OutExpo, nastuEndTime, nextTime, 1, 0.5f);
+            natsu.Fade(startTime, endTime, 1, 1);
+            natsu.MoveY(OsbEasing.InExpo, uuStart, endTime, startY, - 200);
+
+            nastuBack.Color(nastuEndTime, endTime, colorRGB(247, 185, 52), colorRGB(247, 185, 52));
+            nastuBack.ScaleVec(OsbEasing.InOutQuart, nastuEndTime, nextTime, 400, 400, 854, 480);
+            nastuBack.Rotate(OsbEasing.OutBack, nastuEndTime, nextTime, MathHelper.DegreesToRadians(45), MathHelper.DegreesToRadians(0));
+
+            texture = bigFont.GetTexture(textChars[1].ToString());
+            var wo = nastuLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX - 110, - 100));
+
+            wo.Color(nastuEndTime, colorRGB(39, 127, 242));
+            wo.MoveY(OsbEasing.InOutBack, nastuEndTime, nextTime, - 100, startY);
+            wo.Scale(nastuEndTime, endTime, 0.35f, 0.35f);
+            wo.MoveY(OsbEasing.InExpo, uuStart, endTime, startY, - 200);
+
+            Vector2 ikriruPos = new Vector2(260, startY - 5);
+
+            for (int i = 2; i < textChars.Length; i++)
+            {
+                texture = bigFont.GetTexture(textChars[i].ToString());
+
+                var bitmap = GetMapsetBitmap(texture.Path);
+
+                var sprite = nastuLayer.CreateSprite(texture.Path, OsbOrigin.CentreLeft, ikriruPos);
+                var spriteCentre = nastuLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(ikriruPos.X + (bitmap.Width * 0.6f) /2, ikriruPos.Y));
+                float offset = 0;
+
+                switch (i)
+                {
+                    case 2:
+                        offset = 120;
+                        break;
+                    case 3:
+                        offset = 120;
+                        break;
+                    case 4:
+                        offset = 105;
+                        break;
+
+                }
+                float Xpos = 260 + offset *(i - 2);
+
+                sprite.ScaleVec(OsbEasing.OutExpo, nextTime, uStart, 0, 0.6f, 0.6f, 0.6f);
+                sprite.MoveX(OsbEasing.OutBack, nextTime, uStart, 260, Xpos);
+                sprite.Fade(nextTime, uuStart, 1, 1);
+
+                spriteCentre.Fade(uuStart, endTime, 1, 1);
+                spriteCentre.MoveX(uuStart, Xpos + (bitmap.Width * 0.6f) /2);
+                spriteCentre.ScaleVec(OsbEasing.OutCubic, uuStart, uuEnd, 0.6f, 0.6f, 0.65f, 0.65f);
+                spriteCentre.ScaleVec(OsbEasing.OutCubic, uuuuStart, uuuuEnd, 0.65f, 0.65f, 0.7f, 0.7f);
+                spriteCentre.MoveY(OsbEasing.InExpo, uuStart, endTime, startY, - 200);
+            }
+
+            var ikiBack1 = backNatsuLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(ikriruPos.X + 140, ikriruPos.Y));
+            var ikiBack2 = backNatsuLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(ikriruPos.X + 140, ikriruPos.Y));
+
+            ikiBack1.ScaleVec(OsbEasing.OutQuint, uuStart, uuEnd, 300, 0, 300, 480);
+            ikiBack1.Color(uuStart, colorRGB(176, 81, 245));
+            ikiBack1.Fade(uuStart, endTime, 0.5f, 0.5f);
+            ikiBack1.ScaleVec(OsbEasing.OutQuint, uuuuStart, uuuuEnd, 300, 480, 1100, 480);
+            ikiBack1.Fade(endTime, endTime + 1500, 0.5f, 0);
+
+            ikiBack2.ScaleVec(OsbEasing.OutQuint, uuuuStart, uuuuEnd, 300, 0, 300, 480);
+            ikiBack2.Color(uuuuStart, colorRGB(77, 255, 255));
+            ikiBack2.Fade(uuuuStart, endTime, 0.5f, 0.5f);
+            ikiBack2.Fade(endTime, endTime + 1500, 0.5f, 0);
+
+        }
 
         public void CreateBigText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 fontColor)
         {
