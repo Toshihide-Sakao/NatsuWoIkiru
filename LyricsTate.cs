@@ -116,8 +116,20 @@ namespace StorybrewScripts
             CreateBegText("夏の分だけ輝いた", 38792, 44523, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
             CreateBegText("君に恋した", 41995, 44523, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255), true);
 
+            // 夏を生きる
+            // 閉じ込めたいほど早く過ぎ去ってしまうよ
+            // それならばもっと早く駆け抜けてしまえ
 
+            // 君は熱く
+            // 終わらないんだとはっきりと告げるから
+            // 君の続きが見たい　逞しくあれ
             CreateNatsuText("夏を生きる", 45534, 50084, 320, 240);
+            CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 200, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 240, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 280, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+
+            CreateBigThroughText("早く", 52950, 53287, 150, 220, 1.5f, colorRGB(255, 255, 255));
+            CreateNorBegText("過ぎ去ってしまうよ", 53118, 55646, 300, 240, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
 
             //
 
@@ -312,6 +324,7 @@ namespace StorybrewScripts
             var nastuLayer = GetLayer("natsu");
             var backNatsuLayer = GetLayer("backNatsu");
 
+            
             var texture = bigFont.GetTexture(textChars[0].ToString());
             var natsu = nastuLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, 550));
             var nastuBack = backNatsuLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(startX, 650));
@@ -399,28 +412,30 @@ namespace StorybrewScripts
             ikiBack2.ScaleVec(OsbEasing.OutQuint, uuuuStart, uuuuEnd, 300, 0, 300, 480);
             ikiBack2.Color(uuuuStart, colorRGB(77, 255, 255));
             ikiBack2.Fade(uuuuStart, endTime, 0.5f, 0.5f);
-            ikiBack2.Fade(endTime, endTime + 1500, 0.5f, 0);
+            ikiBack2.Fade(endTime, endTime + 450, 0.5f, 0);
 
         }
 
-        public void CreateBigText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 fontColor)
+        public void CreateBigThroughText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 fontColor)
         {
             char[] textChars = text.ToCharArray(0, text.Length);
 
-            var sabiTextLayer = GetLayer("sabiText");
-            var sabiBackLayer = GetLayer("sabiBack");
+            var HayakuTextLayer = GetLayer("HayakuOverText");
+            float duration = endTime - startTime;
 
             for (int i = 0; i < textChars.Length; i++)
             {
-                float offset = 30 * spriteScale;
+                float offset = 200 * spriteScale;
 
                 float Xpos = startX + offset *i;
 
-                var texture = font.GetTexture(textChars[i].ToString());
-                var sprite = sabiTextLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY));
+                var texture = bigFont.GetTexture(textChars[i].ToString());
+                var sprite = HayakuTextLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY + Random(-20, 20)));
 
-                sprite.Color(startTime, fontColor);
-                sprite.Scale(startTime, endTime, spriteScale, spriteScale);
+                sprite.Color(startTime + (offset*i /2), fontColor);
+                sprite.Scale(startTime + (offset*i /2), endTime, spriteScale, spriteScale);
+                sprite.MoveX(OsbEasing.OutSine, startTime + (offset*i /10), startTime + (duration /2), - 100 + (offset*i), Xpos);
+                sprite.MoveX(OsbEasing.InSine, startTime + (duration/2), endTime, Xpos, 600);
             }
         }
 
@@ -473,16 +488,16 @@ namespace StorybrewScripts
                             
                             break;
                         case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing);
-                            moveFromRight(square, startTime, endTime, Xpos, inEasing, outEasing);
+                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
+                            moveFromRight(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
                             break;
                         case 2:
                             moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing);
                             moveFromBot(square, startTime, endTime, startY, inEasing, outEasing);
                             break;
                         case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing);
-                            moveFromLeft(square, startTime, endTime, Xpos, inEasing, outEasing);
+                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
+                            moveFromLeft(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
                             break;
                     }
                 }
@@ -495,13 +510,13 @@ namespace StorybrewScripts
                             
                             break;
                         case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing);
+                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
                             break;
                         case 2:
                             moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing);
                             break;
                         case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing);
+                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
                             break;
                         case 4:
                             sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
@@ -570,16 +585,16 @@ namespace StorybrewScripts
                             
                             break;
                         case 1:
-                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing);
-                            moveFromRight(square, startTime, endTime, sqXpos, inEasing, outEasing);
+                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
+                            moveFromRight(square, startTime, endTime, sqXpos, inEasing, outEasing, 0);
                             break;
                         case 2:
                             moveFromBot(sprite, startTime, endTime, Ypos, inEasing, outEasing);
                             moveFromBot(square, startTime, endTime, Ypos, inEasing, outEasing);
                             break;
                         case 3:
-                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing);
-                            moveFromLeft(square, startTime, endTime, sqXpos, inEasing, outEasing);
+                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
+                            moveFromLeft(square, startTime, endTime, sqXpos, inEasing, outEasing, 0);
                             break;
                     }
                 }
@@ -592,13 +607,13 @@ namespace StorybrewScripts
                             
                             break;
                         case 1:
-                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing);
+                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing, offset * i);
                             break;
                         case 2:
                             moveFromBot(sprite, startTime, endTime, Ypos, inEasing, outEasing);
                             break;
                         case 3:
-                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing);
+                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing, offset * i);
                             break;
                         case 4:
                             sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
@@ -613,18 +628,18 @@ namespace StorybrewScripts
             }
         }
 
-        public void moveFromLeft(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing) 
+        public void moveFromLeft(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float startOffset) 
         {
-            sprite.MoveX(inEasing, startTime, startTime + fadeStartDelay, -250, startX);
+            sprite.MoveX(inEasing, startTime, startTime + fadeStartDelay, -250 + startOffset, startX);
             sprite.MoveX(OsbEasing.None, startTime + fadeStartDelay, endTime, startX, startX + 4);
-            sprite.MoveX(outEasing, endTime, endTime + fadeBegEndDelay, startX + 4, 900);
+            sprite.MoveX(outEasing, endTime, endTime + fadeBegEndDelay, startX + 4, 900 + startOffset);
         }
 
-        public void moveFromRight(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing) 
+        public void moveFromRight(OsbSprite sprite, float startTime, float endTime, float startX, OsbEasing inEasing, OsbEasing outEasing, float startOffset) 
         {
-            sprite.MoveX(inEasing, startTime, startTime + fadeStartDelay, 900, startX);
+            sprite.MoveX(inEasing, startTime, startTime + fadeStartDelay, 900 + startOffset, startX);
             sprite.MoveX(OsbEasing.None, startTime + fadeStartDelay, endTime, startX, startX - 4);
-            sprite.MoveX(outEasing, endTime, endTime + fadeBegEndDelay, startX - 4, -250);
+            sprite.MoveX(outEasing, endTime, endTime + fadeBegEndDelay, startX - 4, -250 + startOffset);
         }
 
         public void moveFromTop(OsbSprite sprite, float startTime, float endTime, float Ypos, OsbEasing inEasing, OsbEasing outEasing) 

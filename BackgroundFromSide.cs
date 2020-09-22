@@ -36,7 +36,7 @@ namespace StorybrewScripts
         public float fadeStartDelay = 1000;
 
         [Configurable]
-        public float fadeEndDelay = 10000;
+        public float fadeEndDelay = 5000;
 
         [Configurable]
         public OsbEasing inEasing = OsbEasing.OutQuart;
@@ -57,19 +57,19 @@ namespace StorybrewScripts
             {
                 case 0:
                     bg.MoveY(inEasing, StartTime, StartTime + fadeStartDelay, ( 600 / 2) + 480 , 240);
-                    //bg.MoveY(outEasing, EndTime, EndTime + fadeEndDelay, 240, -( 600 / 2));
+                    bg.MoveY(outEasing, EndTime, EndTime + fadeEndDelay, 240, -( 600 / 2));
                     break;
                 case 1:
                     bg.MoveX(inEasing, StartTime, StartTime + fadeStartDelay, ( 1000 / 2) + 747, 320);
-                    //bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, -( 1000 / 2) - 107 );
+                    bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, -( 1000 / 2) - 107 );
                     break;
                 case 2:
                     bg.MoveY(inEasing, StartTime, StartTime + fadeStartDelay, -( 600 / 2) , 240);
-                    //bg.MoveY(outEasing, EndTime, EndTime + fadeEndDelay, 240, ( 600 / 2) + 480);
+                    bg.MoveY(outEasing, EndTime, EndTime + fadeEndDelay, 240, ( 600 / 2) + 480);
                     break;
                 case 3:
                     bg.MoveX(inEasing, StartTime, StartTime + fadeStartDelay, -( 1000 / 2) - 107, 320);
-                    //bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, ( 1000 / 2) + 747);
+                    bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, ( 1000 / 2) + 747);
                     break;
             }
         }

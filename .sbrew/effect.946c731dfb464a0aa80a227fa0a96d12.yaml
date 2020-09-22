@@ -75,3 +75,8 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
+  fcec6bf8af944a78ac16b96179658ec8:
+    Name: "HayakuOverText"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes

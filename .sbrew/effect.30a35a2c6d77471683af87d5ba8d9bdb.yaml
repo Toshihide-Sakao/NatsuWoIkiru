@@ -1,5 +1,5 @@
 ﻿FormatVersion: 7
-Name: "sabi1"
+Name: "BackgroundFromSide 9"
 Script: "BackgroundFromSide"
 Config:
   BackgroundPath:
@@ -7,13 +7,13 @@ Config:
     Value: "sb/white.jpg"
   BackgroundColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.6,0.6431373,1,0"
+    Value: "1,0.6901961,0.972549,0"
   StartTime:
     Type: "System.Int32"
-    Value: "50253"
+    Value: "52781"
   EndTime:
     Type: "System.Int32"
-    Value: "56489"
+    Value: "53113"
   Opacity:
     Type: "System.Double"
     Value: "0.8"
@@ -22,13 +22,13 @@ Config:
     Value: "3"
   fadeStartDelay:
     Type: "System.Single"
-    Value: "1000"
+    Value: "300"
   fadeEndDelay:
     Type: "System.Single"
-    Value: "2000"
+    Value: "300"
   inEasing:
     Type: "System.Int32"
-    Value: "10"
+    Value: "4"
     AllowedValues:
       None: "0"
       Out: "1"
@@ -67,7 +67,7 @@ Config:
       InOutBounce: "34"
   outEasing:
     Type: "System.Int32"
-    Value: "18"
+    Value: "3"
     AllowedValues:
       None: "0"
       Out: "1"
@@ -109,7 +109,7 @@ Config:
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  d4693e58d99e4c9cbf63c9ca03158a63:
+  49c84e22214545eba96c4ec296cf55e2:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No
