@@ -13,10 +13,10 @@ Config:
     Value: "52781"
   EndTime:
     Type: "System.Int32"
-    Value: "53113"
+    Value: "53202"
   Opacity:
     Type: "System.Double"
-    Value: "0.8"
+    Value: "1"
   fromWhere:
     Type: "System.Int32"
     Value: "3"

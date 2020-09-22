@@ -118,18 +118,30 @@ namespace StorybrewScripts
 
             // 夏を生きる
             // 閉じ込めたいほど早く過ぎ去ってしまうよ
-            // それならばもっと早く駆け抜けてしまえ
-
-            // 君は熱く
-            // 終わらないんだとはっきりと告げるから
-            // 君の続きが見たい　逞しくあれ
+            
             CreateNatsuText("夏を生きる", 45534, 50084, 320, 240);
             CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 200, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
             CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 240, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
             CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 280, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
 
-            CreateBigThroughText("早く", 52950, 53287, 150, 220, 1.5f, colorRGB(255, 255, 255));
-            CreateNorBegText("過ぎ去ってしまうよ", 53118, 55646, 300, 240, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            CreateBigThroughText("早く", 52950, 53371, 150, 220, 1.5f, colorRGB(255, 255, 255));
+            CreateNorBegText("過ぎ去ってしまうよ", 53118, 55646, 220, 240, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+
+            // それならば no back sorescale 1.3, narabascale 1 (sore apear first then naraba) from right (position upper left)
+            // もっと no back motto
+            // 早く same as before
+            // 駆け抜けてしまえ no back
+
+            
+
+            // 君は熱く same as nastu
+            // 終わらないんだと same as toji but tate
+            // はっきりと one after one on center
+            // 告げるから normal
+
+            // 君の続き
+            // が見たい　
+            // 逞しくあれ one after one
 
             //
 
