@@ -1,5 +1,5 @@
 ﻿FormatVersion: 7
-Name: "BackgroundFromSide 9"
+Name: "BackgroundFromSide 10"
 Script: "BackgroundFromSide"
 Config:
   BackgroundPath:
@@ -7,13 +7,13 @@ Config:
     Value: "sb/white.jpg"
   BackgroundColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,0.6901961,0.972549,0"
+    Value: "0.4509804,0.8627451,1,0"
   StartTime:
     Type: "System.Int32"
-    Value: "52781"
+    Value: "59523"
   EndTime:
     Type: "System.Int32"
-    Value: "53202"
+    Value: "60365"
   Opacity:
     Type: "System.Double"
     Value: "1"
@@ -22,13 +22,13 @@ Config:
     Value: "3"
   fadeStartDelay:
     Type: "System.Single"
-    Value: "300"
+    Value: "400"
   fadeEndDelay:
     Type: "System.Single"
-    Value: "300"
+    Value: "400"
   inEasing:
     Type: "System.Int32"
-    Value: "4"
+    Value: "16"
     AllowedValues:
       None: "0"
       Out: "1"
@@ -67,7 +67,7 @@ Config:
       InOutBounce: "34"
   outEasing:
     Type: "System.Int32"
-    Value: "3"
+    Value: "15"
     AllowedValues:
       None: "0"
       Out: "1"
@@ -109,7 +109,7 @@ Config:
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  49c84e22214545eba96c4ec296cf55e2:
+  18e8991a44be4ff0831b656b1761740d:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No

@@ -1,5 +1,5 @@
 ﻿FormatVersion: 7
-Name: "Background 3"
+Name: "SoreBack1"
 Script: "Background"
 Config:
   BackgroundPath:
@@ -7,22 +7,22 @@ Config:
     Value: "sb/white.jpg"
   StartTime:
     Type: "System.Int32"
-    Value: "121377"
+    Value: "56152"
   EndTime:
     Type: "System.Int32"
-    Value: "122388"
+    Value: "60197"
   Opacity:
     Type: "System.Double"
     Value: "1"
   color:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
+    Value: "0.9686275,0.7490196,0.3686275,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  b0ff93b1a65741ce85643c576ec4f2c3:
+  d84b2fa758a640cf9d0145793cde83a2:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No
