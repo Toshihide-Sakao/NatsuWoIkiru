@@ -481,7 +481,7 @@ namespace StorybrewScripts
 
                 sprite.Color(startTime + (offset*i /2), fontColor);
                 sprite.Scale(startTime + (offset*i /2), endTime, spriteScale, spriteScale);
-                sprite.MoveX(OsbEasing.OutSine, startTime + (offset*i /10), startTime + (duration /2), - 100 + (offset*i), Xpos);
+                sprite.MoveX(OsbEasing.OutSine, startTime + (offset*i /10), startTime + (duration /2), - 300 + (offset*i), Xpos);
                 sprite.MoveX(OsbEasing.InSine, startTime + (duration /2), endTime, Xpos, 800);
             }
         }
@@ -497,84 +497,56 @@ namespace StorybrewScripts
             for (int i = 0; i < textChars.Length; i++)
             {
                 float offset = 30 * spriteScale;
-
-                float Xpos = startX + offset *i;
-
-                var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos, startY));
-                var squareBitmap = GetMapsetBitmap(sqPath);
+                float Xpos = startX + offset * i;
                 
                 var texture = font.GetTexture(textChars[i].ToString());
                 var sprite = backLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY));
-                var charBitmap = GetMapsetBitmap(texture.Path);
-
-                if (fromWhatside != 4)
-                {
-                    sprite.Scale(startTime, 0.5f * spriteScale);
-                }
-                if (!customWidth) 
-                {
-                    square.Scale(startTime, 40 * spriteScale);
-                }
-                else
-                {
-                    square.ScaleVec(startTime, 5, 40 * spriteScale);
-                    square.MoveX(startTime, startX + 40 * spriteScale );
-                }
-                /*
-                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
-                if (enableBackColor)
-                {
-                    square.Color(startTime, backColor);
-
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            moveFromTop(square, startTime, endTime, startY, inEasing, outEasing, 0);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            moveFromRight(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            moveFromBot(square, startTime, endTime, startY, inEasing, outEasing, 0);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            moveFromLeft(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                    }
-                }
-                else 
-                {
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 4:
-                            sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
-                            sprite.Fade(outEasing, endTime, endTime + fadeEndDelay, 1, 0);
-                            break;
-                    }
-                }
+                
+                sprite.Scale(startTime, 0.5f * spriteScale);
+                FromWhereSwitchNor(fromWhatside, sprite, startTime, endTime, Xpos, startY, inEasing, outEasing, offset, i);
 
                 if (enableColor)
                 sprite.Color(startTime, textColor);
-                
+
+                if (enableBackColor)
+                {
+
+                    float sqHeight = 40 * spriteScale;
+                    float spriteWidth = 30 * spriteScale;
+                    //float overlap = sqHeight - rangeBetweenSqs;
+                    //float sqWidth = sqHeight * (textChars.Length) - overlap * (textChars.Length -2);
+
+                    var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos, startY));
+
+                    if (!customWidth) 
+                    {
+                        square.ScaleVec(startTime, spriteWidth, sqHeight);
+                    }
+                    else
+                    {
+                        square.ScaleVec(startTime, spriteWidth, 5);
+                        square.MoveX(startTime, startX + 40 * spriteScale);
+                    }
+
+                    square.Color(startTime, backColor);
+
+                    FromWhereSwitchNor(fromWhatside, square, startTime, endTime, Xpos, startY, inEasing, outEasing, offset, i);
+
+                    if (i == 0)
+                    {
+                        var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos - (spriteWidth * 0.75f ), startY));
+                        sqLeftOver.Color(startTime, backColor);
+                        sqLeftOver.ScaleVec(startTime, spriteWidth /2, sqHeight);
+                        FromWhereSwitchNor(fromWhatside, sqLeftOver, startTime, endTime, Xpos - (spriteWidth * 0.75f ), startY, inEasing, outEasing, offset, i);
+                    }
+                    else if (i == textChars.Length -1)
+                    {
+                        var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos + (spriteWidth * 0.75f ), startY));
+                        sqLeftOver.Color(startTime, backColor);
+                        sqLeftOver.ScaleVec(startTime, spriteWidth /2, sqHeight);
+                        FromWhereSwitchNor(fromWhatside, sqLeftOver, startTime, endTime, Xpos + (spriteWidth * 0.75f ), startY, inEasing, outEasing, offset, i);
+                    }
+                }
             }
         }
 
@@ -589,84 +561,56 @@ namespace StorybrewScripts
             for (int i = 0; i < textChars.Length; i++)
             {
                 float offset = 30 * spriteScale;
-
-                float Xpos = startX + offset *i;
-
-                var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos, startY));
-                var squareBitmap = GetMapsetBitmap(sqPath);
+                float Xpos = startX + offset * i;
                 
                 var texture = font.GetTexture(textChars[i].ToString());
                 var sprite = backLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(Xpos, startY));
-                var charBitmap = GetMapsetBitmap(texture.Path);
-
-                if (fromWhatside != 4)
-                {
-                    sprite.Scale(startTime, 0.5f * spriteScale);
-                }
-                if (!customWidth) 
-                {
-                    square.Scale(startTime, 40 * spriteScale);
-                }
-                else
-                {
-                    square.ScaleVec(startTime, 5, 40 * spriteScale);
-                    square.MoveX(startTime, startX + 40 * spriteScale );
-                }
-                /*
-                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
-                if (enableBackColor)
-                {
-                    square.Color(startTime, backColor);
-
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            moveFromTop(square, startTime, endTime, startY, inEasing, outEasing, 0);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            moveFromRight(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            moveFromBot(square, startTime, endTime, startY, inEasing, outEasing, 0);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            moveFromLeft(square, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                    }
-                }
-                else 
-                {
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, startY, inEasing, outEasing, 0);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, Xpos, inEasing, outEasing, offset * i);
-                            break;
-                        case 4:
-                            sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
-                            sprite.Fade(outEasing, endTime, endTime + fadeEndDelay, 1, 0);
-                            break;
-                    }
-                }
+                
+                sprite.Scale(startTime, 0.5f * spriteScale);
+                FromWhereSwitchNor(fromWhatside, sprite, startTime, endTime, Xpos, startY, inEasing, outEasing, offset, i);
 
                 if (enableColor)
                 sprite.Color(startTime, textColor);
-                
+
+                if (enableBackColor)
+                {
+
+                    float sqHeight = 40 * spriteScale;
+                    float spriteWidth = 30 * spriteScale;
+                    //float overlap = sqHeight - rangeBetweenSqs;
+                    //float sqWidth = sqHeight * (textChars.Length) - overlap * (textChars.Length -2);
+
+                    var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos, startY));
+
+                    if (!customWidth) 
+                    {
+                        square.ScaleVec(startTime, spriteWidth, sqHeight);
+                    }
+                    else
+                    {
+                        square.ScaleVec(startTime, spriteWidth, 5);
+                        square.MoveX(startTime, startX + 40 * spriteScale);
+                    }
+
+                    square.Color(startTime, backColor);
+
+                    FromWhereSwitchNor(fromWhatside, square, startTime, endTime, Xpos, startY, inEasing, outEasing, offset, i);
+
+                    if (i == 0)
+                    {
+                        var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos - (spriteWidth * 0.75f ), startY));
+                        sqLeftOver.Color(startTime, backColor);
+                        sqLeftOver.ScaleVec(startTime, spriteWidth /2, sqHeight);
+                        FromWhereSwitchNor(fromWhatside, sqLeftOver, startTime, endTime, Xpos - (spriteWidth * 0.75f ), startY, inEasing, outEasing, offset, i);
+                    }
+                    else if (i == textChars.Length -1)
+                    {
+                        var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(Xpos + (spriteWidth * 0.75f ), startY));
+                        sqLeftOver.Color(startTime, backColor);
+                        sqLeftOver.ScaleVec(startTime, spriteWidth /2, sqHeight);
+                        FromWhereSwitchNor(fromWhatside, sqLeftOver, startTime, endTime, Xpos + (spriteWidth * 0.75f ), startY, inEasing, outEasing, offset, i);
+                    }
+                }
             }
         }
 
@@ -686,85 +630,106 @@ namespace StorybrewScripts
                 float Ypos = startY + offset *i;
                 float sqXpos = startX;
                 if (customWidth)
-                {
-                    sqXpos += 8;
-                }
+                sqXpos += 8;
 
-                var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(startX, Ypos));
-                var squareBitmap = GetMapsetBitmap(sqPath);
-                
                 var texture = font.GetTexture(textChars[i].ToString());
                 var sprite = backLayer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, Ypos));
                 var charBitmap = GetMapsetBitmap(texture.Path);
 
-                sprite.Scale(startTime, 0.5f * spriteScale);/*
-                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
-
-                if (!customWidth) 
-                {
-                    square.Scale(startTime, 40 * spriteScale);
-                }
-                else
-                {
-                    square.ScaleVec(startTime, 2, 40 * spriteScale);
-                    square.Fade(startTime, 0.8f);
-                    square.MoveX(startTime, sqXpos);
-                }
-
-                if (enableBackColor)
-                {
-                    
-                    square.Color(startTime, backColor);
-
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            moveFromTop(square, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
-                            moveFromRight(square, startTime, endTime, sqXpos, inEasing, outEasing, 0);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            moveFromBot(square, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
-                            moveFromLeft(square, startTime, endTime, sqXpos, inEasing, outEasing, 0);
-                            break;
-                    }
-                }
-                else 
-                {
-                    switch (fromWhatside)
-                    {
-                        case 0:
-                            moveFromTop(sprite, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            
-                            break;
-                        case 1:
-                            moveFromRight(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
-                            break;
-                        case 2:
-                            moveFromBot(sprite, startTime, endTime, Ypos, inEasing, outEasing, offset * i);
-                            break;
-                        case 3:
-                            moveFromLeft(sprite, startTime, endTime, startX, inEasing, outEasing, 0);
-                            break;
-                        case 4:
-                            sprite.Scale(inEasing, startTime, startTime + fadeStartDelay, 0, 0.5f * spriteScale);
-                            sprite.Fade(outEasing, endTime, endTime + fadeEndDelay, 1, 0);
-                            break;
-                    }
-                }
+                sprite.Scale(startTime, 0.5f * spriteScale);
+                FromWhereSwitchTate(fromWhatside, sprite, startTime, endTime, startX, Ypos, inEasing, outEasing, offset, i);
 
                 if (enableColor)
                 sprite.Color(startTime, textColor);
-                
+                /*
+                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
+                sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);*/
+
+                if (enableBackColor)
+                {
+                    float sqWidth = 40 * spriteScale;
+                    float spriteHeight = 30 * spriteScale;
+                    var square = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(sqXpos, Ypos));
+
+                    square.Color(startTime, backColor);
+                    FromWhereSwitchTate(fromWhatside, square, startTime, endTime, sqXpos, Ypos, inEasing, outEasing, offset, i);
+
+                    float customWidthFloat = 2;
+
+                    if (!customWidth) 
+                    {
+                        square.ScaleVec(startTime, sqWidth, spriteHeight);
+
+                        if (i == 0)
+                        {
+                            var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(sqXpos, Ypos - (spriteHeight * 0.75f )));
+                            sqLeftOver.Color(startTime, backColor);
+                            FromWhereSwitchTate(fromWhatside, sqLeftOver, startTime, endTime, sqXpos, Ypos - (spriteHeight * 0.75f ), inEasing, outEasing, offset, i);
+
+                            if (!customWidth)
+                            sqLeftOver.ScaleVec(startTime, sqWidth, spriteHeight /2);
+                            else
+                            sqLeftOver.ScaleVec(startTime, customWidthFloat, spriteHeight /2);
+                            sqLeftOver.MoveX(startTime, sqXpos);
+                        }
+                        else if (i == textChars.Length -1)
+                        {
+                            var sqLeftOver = textLayer.CreateSprite(sqPath, OsbOrigin.Centre, new Vector2(sqXpos, Ypos + (spriteHeight * 0.75f )));
+                            sqLeftOver.Color(startTime, backColor);
+                            FromWhereSwitchTate(fromWhatside, sqLeftOver, startTime, endTime, sqXpos, Ypos + (spriteHeight * 0.75f ), inEasing, outEasing, offset, i);
+
+                            if (!customWidth)
+                            sqLeftOver.ScaleVec(startTime, sqWidth, spriteHeight /2);
+                            else
+                            sqLeftOver.ScaleVec(startTime, customWidthFloat, spriteHeight /2);
+                            sqLeftOver.MoveX(startTime, sqXpos);
+                        }
+                    }
+                    else
+                    {
+                        square.ScaleVec(startTime, customWidthFloat, spriteHeight);
+                        square.Fade(startTime, 0.8f);
+                        square.MoveX(startTime, sqXpos);
+                    }
+                }
+            }
+        }
+
+        public void FromWhereSwitchNor(int fromWhatside, OsbSprite sprite, float startTime, float endTime, float X, float Y, OsbEasing inEasing, OsbEasing outEasing, float offset, int i)
+        {
+            switch (fromWhatside)
+            {
+                case 0:
+                    moveFromTop(sprite, startTime, endTime, Y, inEasing, outEasing, 0);
+                    break;
+                case 1:
+                    moveFromRight(sprite, startTime, endTime, X, inEasing, outEasing, offset * i);
+                    break;
+                case 2:
+                    moveFromBot(sprite, startTime, endTime, Y, inEasing, outEasing, 0);
+                    break;
+                case 3:
+                    moveFromLeft(sprite, startTime, endTime, X, inEasing, outEasing, offset * i);
+                    break;
+            }
+        }
+
+        public void FromWhereSwitchTate(int fromWhatside, OsbSprite sprite, float startTime, float endTime, float X, float Y, OsbEasing inEasing, OsbEasing outEasing, float offset, int i)
+        {
+            switch (fromWhatside)
+            {
+                case 0:
+                    moveFromTop(sprite, startTime, endTime, Y, inEasing, outEasing, offset * i);
+                    break;
+                case 1:
+                    moveFromRight(sprite, startTime, endTime, X, inEasing, outEasing, 0);
+                    break;
+                case 2:
+                    moveFromBot(sprite, startTime, endTime, Y, inEasing, outEasing, offset * i);
+                    break;
+                case 3:
+                    moveFromLeft(sprite, startTime, endTime, X, inEasing, outEasing, 0);
+                    break;
             }
         }
 
