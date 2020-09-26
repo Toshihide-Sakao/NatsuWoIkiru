@@ -143,11 +143,16 @@ namespace StorybrewScripts
 
             // 君は熱く same as nastu
             CreateNatsuText("君は熱く", 67107, 68287, 68792, 69466, 70141, 70478, 70815, 71320, 71657, 320, 240, 2);
+            CreateNorBegText("終わらないんだと", 71826, 73511, 250, 200, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("終わらないんだと", 71826, 73511, 250, 240, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("終わらないんだと", 71826, 73511, 250, 280, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
             // 終わらないんだと same as toji but tate
             // はっきりと one after one on center
             // 告げるから normal
+            CreateBegText("はっきりと", 74523, 77556, 350, 160, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            CreateBegText("告げるから", 75871, 77556, 300, 220, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
  
-            // 君の続き
+            // 君の続き 四角でぜんぶ
             // が見たい　
             // 逞しくあれ one after one
 
@@ -172,96 +177,64 @@ namespace StorybrewScripts
             CreateBegText("何度も青く染まる", 115646, 120702, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
             CreateBegText("君にくらくらした", 118170, 120702, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
 
-/*
-まっすぐな視線が, 110253, 122051
-放物線描いて
-何度も青く染まる
-君にくらくらした
-*/
+            // 夏を生きる
+            // 見間違うほど
+            // 凛とした顔していた
             
-/*
-            勢いまかせの
-サイダー　
 
-ベタついたまま
+            CreateNatsuText("夏を生きる", 122388, 123568, 124073, 124747, 125422, 125759, 126096, 126601, 127107, 320, 240, 3);
+            CreateNorBegText("見間違うほど", 127107, 128792, 250, 200, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("見間違うほど", 127107, 128792, 250, 240, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("見間違うほど", 127107, 128792, 250, 280, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
 
-透明な
-フリをしていた
+            CreateNorBegText("凛とした顔していた", 129804, 132163, 130, 240, 1.6f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, false, colorRGB(0,0,0), true, colorRGB(245, 182, 105));
 
-“本当”は全部
-隠れているから
-
-泥にまみれた
-強さを探した
-
-/tokubetsu
-"まっすぐな視線を", 33399, 43848
-"こちらへ飛ばして", 36096, 43848, 580, 320, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
-"夏の分だけ輝いた", 38792, 43848, 250, 320, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
-"君に恋した", 41995, 43848, 180, 320, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(255,255,255)
-/-------
+            // 君を　見逃せない
+            // 逞しくあれ
 
 
-//rotate and zoom out/in
-夏を生きる
-閉じ込めたいほど早く過ぎ去ってしまうよ
-それならばもっと早く駆け抜けてしまえ
+            // GekouYoushi
+            // 空は高く
+            // どこまでだって行けるような
+            // 
+            // 気がする
+            // 日焼けをしながら
+            // 祈る手が
+            // 気にせず汗をかいた
 
-君は熱く
-終わらないんだとはっきりと告げるから
-君の続きが見たい　逞しくあれ
+            //ookiku yaru
+            // 大きく
 
+            //itumono girl
+            // 振りかぶって君を
+            // まっすぐに捉えて
+            // 誰にも負けないエールを
+            // 背中に投げた
+            
 
-今は気が抜けた, 88680, 90702
-サイダー　
-"どうか笑って", 91040, 93736
-
-誰よりも, 94073, 97444
-近くで見てた
-
-“本当”
-はどこにあるのか, 99466, 103174
-と探して, 99466, 103174
-
-汗にまみれた, 103511, 110084
-涙を見つけた
-
-
-まっすぐな視線が, 110253, 122051
-放物線描いて
-何度も青く染まる
-君にくらくらした
+            // 夏を生きる
+            // 閉じ込めたいほど
+            // 早く
+            // 過ぎ去ってしまうよ
+            // それならばもっと
+            // 早く
+            // 駆け抜けてしまえ
 
 
-夏を生きる
-見間違うほど凛とした顔していた
-君を見逃せない　逞しくあれ
+            // 夏を生きる
+            // 見間違うほど
+            // 凛  とした顔していた
+            // このままじゃ遠くなる
+            // 追いつかなくちゃ
 
-空は高く
-どこまでだって行ける
-ような
-気がする
-日焼けを
-しながら
-祈る手が
-気にせず
-汗をかいた
-大きく
-振りかぶって君を
-まっすぐに捉えて
-誰にも負けないエールを
-背中に投げた
 
-夏を生きる
-閉じ込めたいほど早く過ぎ去ってしまうよ
-それならばもっと早く駆け抜けてしまえ
-夏を生きる
-見間違うほど凛とした顔していた
-このままじゃ遠くなる　追いつかなくちゃ
-君は熱く
-変わらないんだと曇りなく笑うから
-君の続きが見たい
-逞しくあれ*/
+            // 君は熱く
+            // 変わらないんだと
+            // 曇りなく笑うから
+            // 君の続きが見たい
+            // 逞しくあれ
+
+            // 逞しくあれ
 
             // Any language is supported (as long as the fontName used supports the language)
         }
