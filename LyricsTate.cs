@@ -221,10 +221,10 @@ namespace StorybrewScripts
             // "大きく", 172275
 
             //itumono girl
-            CreateBegText("振りかぶって君を", 173624, 185084, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("まっすぐに捉えて", 176320, 185084, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("誰にも負けないエールを", 179017, 185084, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
-            CreateBegText("背中に投げた", 182388, 185084, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("振りかぶって君を", 173624, 184747, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("まっすぐに捉えて", 176320, 184747, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("誰にも負けないエールを", 179017, 184747, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("背中に投げた", 182388, 184747, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
             
             // 振りかぶって君を
             // まっすぐに捉えて
@@ -234,17 +234,32 @@ namespace StorybrewScripts
             // CreateNatsuText("夏を生きる", 122388, 123568, 124073, 124747, 125422, 125759, 126096, 126601, 127107, 320, 240, 3);
             CreateNatsuText("夏を生きる", 185759, 186770, 187444, 188118, 188792, 189129, 189466, 189972, 190478, 320, 240, 3);
             // 夏を生きる
-            // 閉じ込めたいほど
-            // 早く
-            // 過ぎ去ってしまうよ
-            // それならばもっと
-            // 早く
-            // 駆け抜けてしまえ
+
+            CreateNorBegText("閉じ込めたいほど", 190478, 192332, 250, 200, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("閉じ込めたいほど", 190478, 192332, 250, 240, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            CreateNorBegText("閉じ込めたいほど", 190478, 192332, 250, 280, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            // "閉じ込めたいほど"
+
+            CreateBigThroughText("早く", 193174, 193597, 150, 220, 1.5f, colorRGB(255, 255, 255), 200);
+            CreateNorBegText("過ぎ去ってしまうよ", 193427, 196208, 250, 240, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            // "早く"
+            // "過ぎ去ってしまうよ"
+            // "それならばもっと"
+            // "早く"
+            // "駆け抜けてしまえ"
+
+            // CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 200, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            // CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 240, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+            // CreateNorBegText("閉じ込めたいほど", 50253, 51938, 250, 280, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(255, 191, 82), true, colorRGB(0,0,0));
+
+            // CreateBigThroughText("早く", 52950, 53371, 150, 220, 1.5f, colorRGB(255, 255, 255), 200);
+            // CreateNorBegText("過ぎ去ってしまうよ", 53118, 55646, 250, 240, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            
 
 
-            // 夏を生きる
-            // 見間違うほど
-            // 凛  とした顔していた
+            // "夏を生きる"
+            // "見間違うほど"
+            // "凛  とした顔していた"
             // このままじゃ遠くなる
             // 追いつかなくちゃ
 

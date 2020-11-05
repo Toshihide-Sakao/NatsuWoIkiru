@@ -65,6 +65,13 @@ namespace StorybrewScripts
 
         public override void Generate()
         {
+            if (StartTime == EndTime)
+            {
+                StartTime = (int)Beatmap.HitObjects.First().StartTime;
+                EndTime = (int)Beatmap.HitObjects.Last().EndTime;
+            }
+            EndTime = Math.Min(EndTime, (int)AudioDuration);
+            StartTime = Math.Min(StartTime, EndTime);
 
             var bitmap = GetMapsetBitmap(Path);
 
@@ -82,9 +89,8 @@ namespace StorybrewScripts
 
                 var spriteRotation = moveAngle + MathHelper.DegreesToRadians(Rotation);
 
-                float Y = Random(0, 430);
-                var startPosition = new Vector2(- 200 , Y);
-                var endPosition = new Vector2(1000 , Y);
+                var startPosition = SpawnOrigin + new Vector2((float)Math.Cos(spawnAngle), (float)Math.Sin(spawnAngle)) * spawnDistance;
+                var endPosition = startPosition + new Vector2((float)Math.Cos(moveAngle), (float)Math.Sin(moveAngle)) * moveDistance;
 
                 var loopDuration = duration / loopCount;
                 var startTime = StartTime + (i * loopDuration) / ParticleCount;
@@ -116,9 +122,12 @@ namespace StorybrewScripts
                     particle.Rotate(startTime, spriteRotation);
                 if (color.R != 1 || color.G != 1 || color.B != 1)
                     particle.Color(startTime, color);
-                    
-                particle.Scale(startTime, 0.5f);
-                    
+                if (Scale.X != 1 || Scale.Y != 1)
+                {
+                    if (Scale.X != Scale.Y)
+                        particle.ScaleVec(startTime, Scale.X, Scale.Y);
+                    else particle.Scale(startTime, Scale.X);
+                }
                 if (Additive)
                     particle.Additive(startTime, endTime);
 
