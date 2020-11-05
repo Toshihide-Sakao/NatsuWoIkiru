@@ -40,6 +40,12 @@ namespace StorybrewScripts
             sq.Scale(startTime, 50);
             sq.Color(startTime, Color4.Black);
             sq.MoveX(startTime, endTime, - 150, 780);
+
+            var trail = layer.CreateSprite(path, OsbOrigin.Centre, new Vector2(- 150, 240));
+
+            trail.Scale(startTime, 50);
+            trail.Color(startTime, Color4.Green);
+            trail.MoveX(startTime + 50, endTime + 50, - 150, 780);
             
             for (int i = 0; i < amount; i++)
             {
@@ -54,6 +60,7 @@ namespace StorybrewScripts
                 float end = start + duration;
                 
                 sq.MoveY(start, end, startY, endY);
+                trail.MoveY(start + 50, end + 50, startY, endY);
             }
         }
     }
