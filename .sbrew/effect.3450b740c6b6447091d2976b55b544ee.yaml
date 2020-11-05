@@ -1,28 +1,28 @@
 ﻿FormatVersion: 7
-Name: "Sabi 2- Back"
+Name: "Sabi 2- Kimi"
 Script: "Background"
 Config:
   BackgroundPath:
     Type: "System.String"
-    Value: "sb/bloonGirl.png"
+    Value: "sb/white.jpg"
   StartTime:
     Type: "System.Int32"
-    Value: "122388"
+    Value: "133006"
   EndTime:
     Type: "System.Int32"
-    Value: "141264"
+    Value: "140927"
   Opacity:
     Type: "System.Double"
     Value: "1"
   color:
     Type: "OpenTK.Graphics.Color4"
-    Value: "1,1,1,1"
+    Value: "0.372549,0.9607843,0.8039216,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  5e6c5342634c418a92e228e1b041b3be:
+  d59d1256aa8d481c9ee85535d6e29281:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No

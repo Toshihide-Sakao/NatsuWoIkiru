@@ -1,5 +1,5 @@
 ﻿FormatVersion: 7
-Name: "Girl 1"
+Name: "Girl 3"
 Script: "Girl"
 Config:
   girlPath:
@@ -13,19 +13,19 @@ Config:
     Value: "sb/lensflare.png"
   startTime:
     Type: "System.Single"
-    Value: "33062"
+    Value: "173287"
   endTime:
     Type: "System.Single"
-    Value: "43848"
+    Value: "185253"
   backColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.3882353,0.6745098,1,0"
+    Value: "0.6901961,1,0.9176471,0"
   backColorUnder:
     Type: "OpenTK.Graphics.Color4"
     Value: "0,0,0,0"
   startGirlScale:
     Type: "System.Single"
-    Value: "0.2"
+    Value: "0.24"
   endGirlScale:
     Type: "System.Single"
     Value: "0.22"
@@ -34,7 +34,7 @@ Config:
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  4bc42a6536df47a385170ec3c23ac599:
+  406f3944ca474673af21aad86964b342:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No

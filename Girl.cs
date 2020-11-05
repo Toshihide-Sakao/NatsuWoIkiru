@@ -1,3 +1,4 @@
+using System.Numerics;
 using OpenTK;
 using OpenTK.Graphics;
 using StorybrewCommon.Mapset;
@@ -19,6 +20,9 @@ namespace StorybrewScripts
 
         [Configurable]
         public string pixelPath = "sb/white.jpg";
+
+        [Configurable]
+        public string flarePath = "sb/lensflare.png";
 
         [Configurable]
         public float startTime = 33062;
@@ -60,11 +64,17 @@ namespace StorybrewScripts
             flash.Fade(OsbEasing.None, startTime, startTime + 300, 0, 0.3f);
             flash.Fade(OsbEasing.None, startTime + 300, startTime + 600, 0.3f, 0 );
 
-            Vector2 girlStartPos = new Vector2(320, 290);
+            Vector2 girlStartPos = new Vector2(320, 310);
             var girl = layer.CreateSprite(girlPath, OsbOrigin.Centre, girlStartPos);
 
             girl.Scale(OsbEasing.OutQuint, startTime + 300, endTime, startGirlScale, endGirlScale);
             girl.Fade(startTime + 300, startTime + 600, 0.4f, 1);
+
+            var flare = layer.CreateSprite(flarePath, OsbOrigin.TopLeft, new Vector2(- 107, 0));
+
+            flare.Fade(startTime + 300, startTime + 500, 0, 1f);
+            flare.Scale(startTime + 300, 0.4f);
+            flare.Rotate(startTime + 300, endTime, MathHelper.DegreesToRadians(0), MathHelper.DegreesToRadians(10));
             
         }
     }

@@ -149,18 +149,20 @@ namespace StorybrewScripts
             // 終わらないんだと same as toji but tate
             // はっきりと one after one on center
             // 告げるから normal
-            CreateBegText("はっきりと", 74523, 77556, 350, 160, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
-            CreateBegText("告げるから", 75871, 77556, 300, 220, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            CreateBegText("はっきりと", 74523, 77219, 350, 160, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
+            CreateBegText("告げるから", 75871, 77219, 300, 220, 0.9f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, true, colorRGB(179, 53, 48), true, colorRGB(255, 255, 255));
  
             // 君の続き 四角でぜんぶ
             // が見たい　
             // 逞しくあれ one after one
+            var shikaku1 = GetLayer("shikaku1");
+            CreateShikakuText("君の続き", "が見たい", "逞しくあれ", 77893, 88680, 0.17f, 0.2f, colorRGB(52, 183, 235), shikaku1);
 
             //
 
             CreateBegText("今は気が抜けた", 88680, 90365, 550, 180, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
             CreateBegText("サイダー", 88680, 90365, 500, 240, 0.87f, 3, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
-            CreateNorBegText("どうか笑って", 91040, 93736, 100, 350, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
+            CreateNorBegText("どうか笑って", 91040, 93399, 100, 350, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
             CreateBegText("誰よりも", 94073, 97107, 550, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
             CreateBegText("近くで見てた", 94073, 97107, 130, 180, 0.87f, 1, OsbEasing.OutQuart, OsbEasing.InExpo, true, colorRGB(242, 168, 90), false, colorRGB(179, 224, 255));
 
@@ -189,29 +191,48 @@ namespace StorybrewScripts
 
             CreateNorBegText("凛とした顔していた", 129804, 132163, 130, 240, 1.6f, 2, OsbEasing.OutExpo, OsbEasing.InExpo, false, colorRGB(0,0,0), true, colorRGB(245, 182, 105));
 
-            // 君を　見逃せない
+            // 君を
+            // 見逃せない
             // 逞しくあれ
+            var shikaku2 = GetLayer("shikaku2");
+            CreateShikakuText("君を", "見逃せない", "逞しくあれ", 133174, 141348, 0.14f, 0.16f, colorRGB(52, 183, 235), shikaku2);
 
 
             // GekouYoushi
-            // 空は高く
-            // どこまでだって行けるような
-            // 
-            // 気がする
-            // 日焼けをしながら
-            // 祈る手が
-            // 気にせず汗をかいた
+            // x(34) 700, 666, 632, 598, 564, 530, 496, 462, 428, 394
+            // y(24)
 
+            CreateGenkouText("空は高く", 151882, 173624, 702, 24, 1f);
+            CreateGenkouText("どこまでだって行けるような", 154579, 173624, 668, 24, 1f);
+            CreateGenkouText("気がする", 159298, 173624, 600, 24, 1f);
+            CreateGenkouText("日焼けをしながら", 162669, 173624, 531, 24, 1f);
+            CreateGenkouText("祈る手が", 165365, 173624, 496, 24, 1f);
+            CreateGenkouText("気にせず汗をかいた", 168062, 173624, 427, 24, 1f);
+            // 空は高く
+            // "どこまでだって行けるような", 154579
+            // 
+            // "気がする", 159298
+            // "日焼けをしながら", 162669
+            // "祈る手が", 165365
+            // "気にせず汗をかいた", 168062
+
+            CreateOOkikuuu("大きく", new int[] {172275, 172950, 173287}, 173624, new float[] {340, 500, 620}, new float[] {300, 270, 250}, 1.4f,  new float[] {-20, -18, -13});
             //ookiku yaru
-            // 大きく
+            // "大きく", 172275
 
             //itumono girl
+            CreateBegText("振りかぶって君を", 173624, 185084, 650, 100, 0.87f, 2, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("まっすぐに捉えて", 176320, 185084, 580, 100, 0.87f, 3, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("誰にも負けないエールを", 179017, 185084, 100, 100, 0.87f, 1, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            CreateBegText("背中に投げた", 182388, 185084, 30, 100, 0.87f, 0, OsbEasing.OutExpo, OsbEasing.InQuart, true, colorRGB(255, 131, 117), true, colorRGB(0,0,0), true);
+            
             // 振りかぶって君を
             // まっすぐに捉えて
             // 誰にも負けないエールを
             // 背中に投げた
             
-
+            // CreateNatsuText("夏を生きる", 122388, 123568, 124073, 124747, 125422, 125759, 126096, 126601, 127107, 320, 240, 3);
+            CreateNatsuText("夏を生きる", 185759, 186770, 187444, 188118, 188792, 189129, 189466, 189972, 190478, 320, 240, 3);
             // 夏を生きる
             // 閉じ込めたいほど
             // 早く
@@ -436,6 +457,71 @@ namespace StorybrewScripts
 
         }
 
+        public void CreateShikakuText(string text1, string text2, string text3, int startTime, int endTime, float startScale, float endScale, Color4 fontColor, StoryboardLayer layer)
+        {
+            char[] text1Chars = text1.ToCharArray(0, text1.Length);
+            char[] text2Chars = text2.ToCharArray(0, text2.Length);
+            char[] text3Chars = text3.ToCharArray(0, text3.Length);
+
+            //var layer = GetLayer("ShikakuText");
+
+            for (int i = 0; i < text1Chars.Length; i++)
+            {
+                float offset = 270 * startScale;
+
+                float Ypos = 170 + offset *i;
+
+                var texture = bigFont.GetTexture(text1Chars[i].ToString());
+                var sprite = layer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(420, Ypos));
+
+                sprite.Fade(OsbEasing.OutQuint, startTime, startTime + 1800, 0, 1f);
+                sprite.Color(startTime, endTime, fontColor, fontColor);
+                sprite.Scale(startTime, startTime + 3000, startScale, endScale);
+            }
+            for (int i = 0; i < text2Chars.Length; i++)
+            {
+                float offset = 270 * startScale;
+
+                float Ypos = 170 + offset *i;
+
+                var texture = bigFont.GetTexture(text2Chars[i].ToString());
+                var sprite = layer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(320, Ypos));
+
+                sprite.Fade(OsbEasing.OutQuint, startTime, startTime + 1800, 0, 1f);
+                sprite.Color(startTime, endTime, fontColor, fontColor);
+                sprite.Scale(startTime, startTime + 3000, startScale, endScale);
+            }
+            for (int i = 0; i < text3Chars.Length; i++)
+            {
+                float offset = 270 * startScale;
+
+                float Ypos = 170 + offset *i;
+
+                var texture = bigFont.GetTexture(text3Chars[i].ToString());
+                var sprite = layer.CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(220, Ypos));
+
+                sprite.Fade(OsbEasing.OutQuint, startTime, startTime + 1800, 0, 1f);
+                sprite.Color(startTime, endTime, fontColor, fontColor);
+                sprite.Scale(startTime, startTime + 3000, startScale, endScale);
+            }
+
+            var sq1 = layer.CreateSprite(sqPath, OsbOrigin.TopCentre, new Vector2(520, 0));
+            var sq2 = layer.CreateSprite(sqPath, OsbOrigin.BottomCentre, new Vector2(120, 480));
+
+            sq1.ScaleVec(OsbEasing.OutExpo, startTime, endTime - 1000, 40 , 0, 40, 400);
+            sq2.ScaleVec(OsbEasing.OutExpo, startTime, endTime - 1000, 40 , 0, 40, 400);
+            sq1.Color(startTime, colorRGB(214, 57, 36));
+            sq2.Color(startTime, colorRGB(214, 57, 36));
+            sq1.Fade(startTime, 0.8f);
+            sq2.Fade(startTime, 0.8f);
+
+            var background = layer.CreateSprite(sqPath, OsbOrigin.Centre);
+            background.ScaleVec(startTime, endTime, 854, 480, 854, 480);
+            background.Fade(OsbEasing.InOutQuart, startTime, endTime + 1000, 0, 1f);
+
+            
+        }
+
         public void CreateBigThroughText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 fontColor, float between)
         {
             char[] textChars = text.ToCharArray(0, text.Length);
@@ -612,6 +698,8 @@ namespace StorybrewScripts
                 sprite.Scale(startTime, 0.5f * spriteScale);
                 FromWhereSwitchTate(fromWhatside, sprite, startTime, endTime, startX, Ypos, inEasing, outEasing, offset, i);
 
+                fixWrongChars(textChars[i].ToString(), sprite, startTime);
+
                 if (enableColor)
                 sprite.Color(startTime, textColor);
                 /*
@@ -733,14 +821,45 @@ namespace StorybrewScripts
             sprite.MoveY(OsbEasing.None, startTime + fadeStartDelay, endTime, Ypos, Ypos + 4);
             sprite.MoveY(outEasing, endTime, endTime + fadeBegEndDelay, Ypos + 4, 600 + startOffset);
         }
-/*
-        public void CreateText(string text, int startTime, int endTime, float startX, float startY, float spriteScale)
+
+        public void fixWrongChars(string chara, OsbSprite sprite, float startTime)
+        {
+            if (chara == "ー")
+            {
+                sprite.Rotate(startTime, MathHelper.DegreesToRadians(90));
+            }
+        } 
+
+        // public void CreateText(string text, int startTime, int endTime, float startX, float startY, float spriteScale)
+        // {
+        //     char[] textChars = text.ToCharArray(0, text.Length);
+
+        //     for (int i = 0; i < textChars.Length; i++)
+        //     {
+        //         float offset = 30 * spriteScale;
+
+        //         float Ypos = startY + offset *i;
+        //         var texture = font.GetTexture(textChars[i].ToString());
+        //         var sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, Ypos));
+        //         var charBitmap = GetMapsetBitmap(texture.Path);
+
+        //         sprite.Scale(startTime, 0.5f * spriteScale);
+        //         sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
+        //         sprite.Fade(endTime, endTime + fadeEndDelay, opacity, 0);
+        //         sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
+        //         sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeEndDelay, Ypos, Ypos + amountToMove);
+        //         if (enableColor)
+        //         sprite.Color(startTime, textColor);
+        //     }
+        // }
+
+        public void CreateGenkouText(string text, int startTime, int endTime, float startX, float startY, float spriteScale)
         {
             char[] textChars = text.ToCharArray(0, text.Length);
 
             for (int i = 0; i < textChars.Length; i++)
             {
-                float offset = 30 * spriteScale;
+                float offset = 23 * spriteScale;
 
                 float Ypos = startY + offset *i;
                 var texture = font.GetTexture(textChars[i].ToString());
@@ -749,58 +868,51 @@ namespace StorybrewScripts
 
                 sprite.Scale(startTime, 0.5f * spriteScale);
                 sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeEndDelay, opacity, 0);
-                sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
-                sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeEndDelay, Ypos, Ypos + amountToMove);
-                if (enableColor)
-                sprite.Color(startTime, textColor);
+                sprite.Fade(endTime - 100, endTime, opacity, 0);
+                sprite.Color(startTime, Color4.Black);
+                // sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
+                // sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeBegEndDelay, Ypos, Ypos + amountToMove);
             }
         }
 
-        public void CreateColoredBegText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 color)
+        public void CreateOOkikuuu(string text, int[] startTimes, int endTime, float[] x, float[] y, float spriteScale, float[] rotations)
         {
             char[] textChars = text.ToCharArray(0, text.Length);
 
             for (int i = 0; i < textChars.Length; i++)
             {
-                float offset = 30 * spriteScale;
+                var texture = bigFont.GetTexture(textChars[i].ToString());
+                var sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(x[i], y[i]));
 
-                float Ypos = startY + offset *i;
-                var texture = font.GetTexture(textChars[i].ToString());
-                var sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, Ypos));
-                var charBitmap = GetMapsetBitmap(texture.Path);
-
-                sprite.Scale(startTime, 0.5f * spriteScale);
-                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeBegEndDelay, opacity, 0);
-                sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
-                sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeBegEndDelay, Ypos, Ypos + amountToMove);
-                if (enableColor)
-                sprite.Color(startTime, color);
+                sprite.Scale(startTimes[i], 0.5f * spriteScale);
+                sprite.Rotate(startTimes[i], MathHelper.DegreesToRadians(rotations[i]));
+                sprite.Fade(startTimes[i], startTimes[i] + 50, 0, opacity);
+                sprite.Fade(endTime - 100, endTime, opacity, 0);
+                sprite.Color(startTimes[i], Color4.Black);
             }
         }
 
-        public void CreateColoredText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 color)
-        {
-            char[] textChars = text.ToCharArray(0, text.Length);
+        // public void CreateColoredText(string text, int startTime, int endTime, float startX, float startY, float spriteScale, Color4 color)
+        // {
+        //     char[] textChars = text.ToCharArray(0, text.Length);
 
-            for (int i = 0; i < textChars.Length; i++)
-            {
-                float offset = 30 * spriteScale;
+        //     for (int i = 0; i < textChars.Length; i++)
+        //     {
+        //         float offset = 30 * spriteScale;
 
-                float Ypos = startY + offset *i;
-                var texture = font.GetTexture(textChars[i].ToString());
-                var sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, Ypos));
-                var charBitmap = GetMapsetBitmap(texture.Path);
+        //         float Ypos = startY + offset *i;
+        //         var texture = font.GetTexture(textChars[i].ToString());
+        //         var sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, new Vector2(startX, Ypos));
+        //         var charBitmap = GetMapsetBitmap(texture.Path);
 
-                sprite.Scale(startTime, 0.5f * spriteScale);
-                sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
-                sprite.Fade(endTime, endTime + fadeEndDelay, opacity, 0);
-                sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
-                sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeEndDelay, Ypos, Ypos + amountToMove);
-                if (enableColor)
-                sprite.Color(startTime, color);
-            }
-        }*/
+        //         sprite.Scale(startTime, 0.5f * spriteScale);
+        //         sprite.Fade(startTime, startTime + fadeStartDelay, 0, opacity);
+        //         sprite.Fade(endTime, endTime + fadeEndDelay, opacity, 0);
+        //         sprite.MoveY(OsbEasing.OutQuint, startTime, startTime + fadeStartDelay, Ypos - amountToMove, Ypos);
+        //         sprite.MoveY(OsbEasing.InExpo, endTime, endTime + fadeEndDelay, Ypos, Ypos + amountToMove);
+        //         if (enableColor)
+        //         sprite.Color(startTime, color);
+        //     }
+        // }
     }
 }

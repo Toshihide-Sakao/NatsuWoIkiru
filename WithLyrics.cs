@@ -54,6 +54,11 @@ namespace StorybrewScripts
             allshit(17219, 20253, "sb/HatRight.png", 320, 240, 0.28f, 1.9f, 1.9f, 1);
             allshit(26657, 31377, "sb/doroCut.png", 290, 240, 1.1f, 1.4f, 1.8f, 3);
 
+            allshit(88680, 90365, "sb/2222.png", 230, 240, 0.28f, 2f, 1.2f, 3);
+            allshit(91040, 93399, "sb/3333.png", 300, 240, 0.35f, 1.95f, 1.8f, 2 );
+            allshit(94073, 97107, "sb/4444.png", 320, 240, 0.28f, 1.8f, 1.8f, 1);
+            allshit(103511, 108230, "sb/5555.png", 290, 240, 0.6f, 2.7f, 1.4f, 3);
+
         }
 
         public void allshit(float startTime, float endTime, string imagePath, float imageXPos, float imageYPos, float imageScale, float borderXScale, float bordeYScale, int FromWhere) 

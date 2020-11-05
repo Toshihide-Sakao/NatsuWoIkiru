@@ -8,6 +8,9 @@ Config:
   pixelPath:
     Type: "System.String"
     Value: "sb/white.jpg"
+  flarePath:
+    Type: "System.String"
+    Value: "sb/lensflare.png"
   startTime:
     Type: "System.Single"
     Value: "109916"
