@@ -1,5 +1,5 @@
 ﻿FormatVersion: 7
-Name: "SinWave 1"
+Name: "SinWave 6"
 Script: "SinWave"
 Config:
   path:
@@ -7,25 +7,25 @@ Config:
     Value: "sb/ball.png"
   startTime:
     Type: "System.Single"
-    Value: "0"
+    Value: "8792"
   endTime:
     Type: "System.Single"
-    Value: "4000"
+    Value: "13792"
   scale:
     Type: "System.Single"
     Value: "20"
   coloryes:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.9803922,0.6862745,0.3215686,0"
+    Value: "0.372549,0.6588235,0.8509804,0"
   firstY:
     Type: "System.Single"
-    Value: "240"
+    Value: "320"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
     DisplayName: "Random seed"
 Layers:
-  df3ded99a39b4e65b0638100e3ccf298:
+  bb904fdd52aa41a7825fda65dce64250:
     Name: ""
     OsbLayer: Background
     DiffSpecific: No

@@ -34,7 +34,7 @@ namespace StorybrewScripts
             var genkou = GetLayer("").CreateSprite(GenkouYoushiPath, OsbOrigin.Centre, pos);
 
             genkou.Scale(startTime, endTime, Scale, Scale);
-            genkou.Fade(startTime, startTime + 100, 0, 0.9f);
+            genkou.Fade(startTime - 600, startTime, 0, 0.9f);
             genkou.Fade(endTime - 100, endTime, 0.9f, 0);
         }
     }

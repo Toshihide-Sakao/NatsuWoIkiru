@@ -11,6 +11,9 @@ Config:
   flarePath:
     Type: "System.String"
     Value: "sb/lensflare.png"
+  backbackPath:
+    Type: "System.String"
+    Value: "sb/girlback1.png"
   startTime:
     Type: "System.Single"
     Value: "173287"
@@ -19,10 +22,10 @@ Config:
     Value: "185253"
   backColor:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.6901961,1,0.9176471,0"
+    Value: "0.5450981,0.9019608,0.9411765,0"
   backColorUnder:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0,0,0,0"
+    Value: "0.2313726,0.3960784,0.5294118,0"
   startGirlScale:
     Type: "System.Single"
     Value: "0.24"

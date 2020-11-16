@@ -25,6 +25,9 @@ namespace StorybrewScripts
         public string flarePath = "sb/lensflare.png";
 
         [Configurable]
+        public string backbackPath = "sb/girlback1.png";
+
+        [Configurable]
         public float startTime = 33062;
 
         [Configurable]
@@ -47,16 +50,23 @@ namespace StorybrewScripts
         {
             var layer = GetLayer("");
 
+            var backbackImage = layer.CreateSprite(backbackPath, OsbOrigin.Centre, new Vector2(280, 150));
+
+            backbackImage.Scale(startTime + 300, endTime + 500, 0.5f, 0.5f);
+            backbackImage.MoveX(startTime + 300, endTime + 500, 280, 340);
+            backbackImage.Fade(startTime + 300, startTime + 600, 0.7f, 1f);
+
             var background = layer.CreateSprite(pixelPath, OsbOrigin.Centre);
 
             background.ScaleVec(startTime + 300, 854, 480);
             background.Color(startTime + 300, endTime + 500, backColor, backColor);
+            background.Fade(startTime + 300, 0.6f);
 
             var backgroundUnder = layer.CreateSprite(pixelPath, OsbOrigin.TopCentre, new Vector2(320, 320));
 
             backgroundUnder.ScaleVec(startTime + 300, 854, 160);
             backgroundUnder.Color(startTime + 300, endTime + 500, backColorUnder, backColorUnder);
-            backgroundUnder.Fade(startTime + 300, 0.6f);
+            backgroundUnder.Fade(startTime + 300, 1);
 
 		    var flash = layer.CreateSprite(pixelPath, OsbOrigin.Centre);
 

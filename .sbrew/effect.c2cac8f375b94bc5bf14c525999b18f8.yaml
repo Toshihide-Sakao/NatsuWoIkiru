@@ -16,7 +16,7 @@ Config:
     Value: "1"
   color:
     Type: "OpenTK.Graphics.Color4"
-    Value: "0.9686275,0.7490196,0.3686275,1"
+    Value: "0.7215686,0.3254902,0.2745098,1"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"

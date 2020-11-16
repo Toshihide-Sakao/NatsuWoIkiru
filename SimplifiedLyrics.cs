@@ -71,7 +71,7 @@ namespace StorybrewScripts
             // The 'CreateText' function's parameters should be in this order (for reference):
             // CreateText(startTime, endTime, position, origin, text)
 
-            CreateText(0, 3000, new Vector2(320, 240), OsbOrigin.Centre, "Hello world.");
+            //CreateText(0, 3000, new Vector2(320, 240), OsbOrigin.Centre, "Hello world.");
 
             // Any language is supported (as long as the fontName used supports the language)
         }

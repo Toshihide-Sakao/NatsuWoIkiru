@@ -70,16 +70,6 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  9f515531502f4283b796f2864c86bbb4:
-    Name: "overText"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
-  cf1906f64d794358859e2e717056149a:
-    Name: "overTextBack"
-    OsbLayer: Background
-    DiffSpecific: No
-    Visible: Yes
   f69492c4b14e4012924dd60a92fb3c77:
     Name: "shikaku2"
     OsbLayer: Background
@@ -95,13 +85,33 @@ Layers:
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
-  fcec6bf8af944a78ac16b96179658ec8:
-    Name: "HayakuOverText"
+  9f515531502f4283b796f2864c86bbb4:
+    Name: "overText"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  cf1906f64d794358859e2e717056149a:
+    Name: "overTextBack"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  ca2448b7abad44ea8fcc8cbb381d9518:
+    Name: "shikaku3"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
   73b4a907e52c4a9db6b4717505cd1d27:
     Name: ""
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  1a6ca7d53f714f7a8ac0299d7a1ba846:
+    Name: "last shit"
+    OsbLayer: Background
+    DiffSpecific: No
+    Visible: Yes
+  fcec6bf8af944a78ac16b96179658ec8:
+    Name: "HayakuOverText"
     OsbLayer: Background
     DiffSpecific: No
     Visible: Yes
