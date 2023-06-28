@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "LyricsTate 1"
 Script: "LyricsTate"
+Multithreaded: No
 Config:
   opacity:
     Type: "System.Single"
@@ -62,56 +63,56 @@ Layers:
     Visible: Yes
   d554599e014e404e9eeac4e353dc0309:
     Name: "backNatsu"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   fce1c08a5efd4c15940b61748ec077aa:
     Name: "natsu"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   f69492c4b14e4012924dd60a92fb3c77:
     Name: "shikaku2"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   83e28cd548554a6d96f7b2b52b4318ea:
     Name: "text"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   9b08ca7d70c24dc69e0dc73243a9c6c9:
     Name: "textBack"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   9f515531502f4283b796f2864c86bbb4:
     Name: "overText"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   cf1906f64d794358859e2e717056149a:
     Name: "overTextBack"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   ca2448b7abad44ea8fcc8cbb381d9518:
     Name: "shikaku3"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   73b4a907e52c4a9db6b4717505cd1d27:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   1a6ca7d53f714f7a8ac0299d7a1ba846:
     Name: "last shit"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes
   fcec6bf8af944a78ac16b96179658ec8:
     Name: "HayakuOverText"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

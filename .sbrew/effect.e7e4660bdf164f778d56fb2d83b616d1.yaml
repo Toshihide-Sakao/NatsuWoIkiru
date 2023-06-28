@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "Girl 3"
 Script: "Girl"
+Multithreaded: No
 Config:
   girlPath:
     Type: "System.String"
@@ -39,6 +40,6 @@ Config:
 Layers:
   406f3944ca474673af21aad86964b342:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

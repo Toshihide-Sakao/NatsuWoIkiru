@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "BackgroundTwoSides 1"
 Script: "BackgroundTwoSides"
+Multithreaded: No
 Config:
   BackgroundPath:
     Type: "System.String"
@@ -27,6 +28,6 @@ Config:
 Layers:
   a37157381de843919c289234d8b15770:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

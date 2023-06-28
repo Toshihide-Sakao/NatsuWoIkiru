@@ -298,7 +298,7 @@ namespace StorybrewScripts
             // 続きが見たい
             // 逞しくあれ
 
-            CreateText(249804, 258402, new Vector2(320, 240), OsbOrigin.Centre, "逞しきあれ");
+            CreateText(249804, 258402, new Vector2(320, 240), OsbOrigin.Centre, "逞しくあれ");
             // 逞しくあれ
 
             // Any language is supported (as long as the fontName used supports the language)
@@ -584,16 +584,17 @@ namespace StorybrewScripts
             var sq1 = layer.CreateSprite(sqPath, OsbOrigin.TopCentre, new Vector2(520, 0));
             var sq2 = layer.CreateSprite(sqPath, OsbOrigin.BottomCentre, new Vector2(120, 480));
 
-            sq1.ScaleVec(OsbEasing.OutExpo, startTime, endTime - 1000, 40, 0, 40, 400);
-            sq2.ScaleVec(OsbEasing.OutExpo, startTime, endTime - 1000, 40, 0, 40, 400);
+            sq1.ScaleVec(OsbEasing.OutExpo, startTime, endTime, 40, 0, 40, 400);
+            sq2.ScaleVec(OsbEasing.OutExpo, startTime, endTime, 40, 0, 40, 400);
             sq1.Color(startTime, colorRGB(214, 57, 36));
             sq2.Color(startTime, colorRGB(214, 57, 36));
             sq1.Fade(startTime, 0.8f);
             sq2.Fade(startTime, 0.8f);
 
             var background = layer.CreateSprite(sqPath, OsbOrigin.Centre);
-            background.ScaleVec(startTime, endTime, 854, 480, 854, 480);
-            background.Fade(OsbEasing.InOutQuart, startTime, endTime + 1000, 0, 1f);
+            background.ScaleVec(startTime, endTime - 84, 854, 480, 854, 480);
+            background.Fade(OsbEasing.InQuart, startTime, endTime, 0, 1f);
+            // 141264, 141348
 
 
         }

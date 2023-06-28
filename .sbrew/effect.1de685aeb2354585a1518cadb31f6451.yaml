@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "DeleteBackground 1"
 Script: "DeleteBackground"
+Multithreaded: No
 Config:
   Bg:
     Type: "System.String"

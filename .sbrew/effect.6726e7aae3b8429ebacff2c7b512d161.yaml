@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "ParticlesYuuma 1"
 Script: "ParticlesYuuma"
+Multithreaded: No
 Config:
   Path:
     Type: "System.String"
@@ -106,6 +107,6 @@ Config:
 Layers:
   da703042fdf346baa504bd346887eafe:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

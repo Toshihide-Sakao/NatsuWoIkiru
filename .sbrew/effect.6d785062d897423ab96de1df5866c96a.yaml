@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "BackgroundTwoSides 2"
 Script: "BackgroundTwoSides"
+Multithreaded: No
 Config:
   BackgroundPath:
     Type: "System.String"

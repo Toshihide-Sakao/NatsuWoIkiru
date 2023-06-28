@@ -24,8 +24,7 @@ namespace StorybrewScripts
         [Configurable]
         public float opacity = 1f;
 
-        [Configurable]
-        public int fontScale = 30;
+        public int fontScale = 60;
 
         [Configurable]
         public float spriteScale = 1f;
@@ -73,26 +72,59 @@ namespace StorybrewScripts
             font = FontGenerator("sb/credits");
             var layer = GetLayer("");
 
+            // lost以外
             var mapsetBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(90, 120));
+            var storyboarderBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(500, 100));
+
+            // lostだけ
+            if (Beatmap.CircleSize >= 4.29f && Beatmap.CircleSize <= 4.31f)
+            {
+                mapsetBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(90, 220));
+                storyboarderBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(550, 190));
+            }
+
+            // 全部
             var mappersBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(120, 350));
             var mappersBall2 = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(520, 300));
             var mappersBall3 = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(340, 350));
-            var storyboarderBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(500, 100));
             var HSBall = layer.CreateSprite(ballPath, OsbOrigin.Centre, new Vector2(300, 140));
-
-
             BallCreator(mapsetBall, colorRGB(96, 156, 219), 1040, 12584, 1.5f, 1f, "Haruto", colorRGB(245, 202, 103), "Mapset", colorRGB(247, 234, 195), 0.7f);
 
-            // BallCreator(HSBall, colorRGB(247, 119, 119), 6433, 12584, 1.1f, 0.7f, "Haruto & kudosu", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
-            // BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.3f, 0.9f, "Haruto", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 1f);
-            // BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.3f, 0.9f, "Kibbleru", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 1f);
-            // BallCreator(storyboarderBall, colorRGB(92, 94, 214), 7781, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
-
-            BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.1f, 0.9f, "Irohas", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 0.8f);
-            BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.1f, 0.9f, "kudosu", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 0.8f);
-            BallCreator(mappersBall3, colorRGB(239, 247, 119), 6433, 12584, 1.1f, 0.9f, "Haruto", colorRGB(44, 113, 191), "Map", colorRGB(181, 111, 45), 0.8f);
-            BallCreator(storyboarderBall, colorRGB(92, 94, 214), 9129, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
-            BallCreator(HSBall, colorRGB(247, 119, 119), 7781, 12584, 1.1f, 0.7f, "Haruto & kudosu", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+            if (Beatmap.CircleSize >= 4.09 && Beatmap.CircleSize <= 4.11)
+            {
+                BallCreator(HSBall, colorRGB(247, 119, 119), 6433, 12584, 1.1f, 0.7f, "Grindle", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+                BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.3f, 0.9f, "Haruto", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 1f);
+                BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.3f, 0.9f, "Kibbleru", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 1f);
+                BallCreator(storyboarderBall, colorRGB(92, 94, 214), 7781, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
+            }
+            else if (Beatmap.CircleSize >= 4.19 && Beatmap.CircleSize <= 4.21)
+            {
+                BallCreator(HSBall, colorRGB(247, 119, 119), 6433, 12584, 1.1f, 0.7f, "Grindle", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+                BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.3f, 0.9f, "Stratos", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 1f);
+                BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.3f, 0.9f, "Lasse", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 1f);
+                BallCreator(storyboarderBall, colorRGB(92, 94, 214), 7781, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
+            }
+            else if (Beatmap.CircleSize >= 4.29 && Beatmap.CircleSize <= 4.31)
+            {
+                BallCreator(HSBall, colorRGB(247, 119, 119), 6433, 12584, 1.1f, 0.7f, "Grindle", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+                BallCreator(mappersBall3, colorRGB(95, 168, 217), 3736, 12584, 1.3f, 0.9f, "Sarawatlism", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 1f);
+                BallCreator(storyboarderBall, colorRGB(92, 94, 214), 7781, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
+            }
+            else if (Beatmap.CircleSize >= 3.99 && Beatmap.CircleSize <= 4.01)
+            {
+                BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.1f, 0.9f, "Irohas", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 0.8f);
+                BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.1f, 0.9f, "kudosu", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 0.8f);
+                BallCreator(mappersBall3, colorRGB(239, 247, 119), 6433, 12584, 1.1f, 0.9f, "Haruto", colorRGB(44, 113, 191), "Map", colorRGB(181, 111, 45), 0.8f);
+                BallCreator(storyboarderBall, colorRGB(92, 94, 214), 9129, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
+                BallCreator(HSBall, colorRGB(247, 119, 119), 7781, 12584, 1.1f, 0.7f, "Grindle", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+            }
+            else
+            {
+                BallCreator(HSBall, colorRGB(247, 119, 119), 6433, 12584, 1.1f, 0.7f, "Grindle", colorRGB(109, 213, 227), "HS", colorRGB(231, 235, 136), 0.8f);
+                BallCreator(mappersBall, colorRGB(95, 168, 217), 3736, 12584, 1.3f, 0.9f, "Ajisai", colorRGB(166, 65, 65), "Map", colorRGB(245, 135, 71), 1f);
+                BallCreator(mappersBall2, colorRGB(207, 95, 95), 4747, 12584, 1.3f, 0.9f, "Haruto", colorRGB(54, 201, 167), "Map", colorRGB(97, 181, 250), 1f);
+                BallCreator(storyboarderBall, colorRGB(92, 94, 214), 7781, 12584, 0.9f, 0.6f, "MRL", colorRGB(204, 175, 90), "SB", colorRGB(255, 255, 255), 0.8f);
+            }
 
         }
 
@@ -107,7 +139,7 @@ namespace StorybrewScripts
             var GenreText = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, ball.PositionAt(startTime));
             GenreText.Fade(startTime, startTime + 100, 0, 1);
             GenreText.Color(startTime, endTime, insidetextcolor, insidetextcolor);
-            GenreText.Scale(startTime, bruh2scale);
+            GenreText.Scale(startTime, bruh2scale / 2);
 
             TextCreator(startTime, endTime, ball, bruh, textcolor, textScale);
         }
@@ -153,7 +185,7 @@ namespace StorybrewScripts
                 {
                     sprite = GetLayer("").CreateSprite(texture.Path, OsbOrigin.Centre, points[j]);
                 }
-                sprite.Scale(t1, textScale);
+                sprite.Scale(t1, textScale / 2);
 
                 for (int e = 0; e < 2; e++)
                 {

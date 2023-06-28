@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "Hontou1"
 Script: "ImportOsb"
+Multithreaded: No
 Config:
   Path:
     Type: "System.String"
@@ -12,6 +13,6 @@ Config:
 Layers:
   96cc655e32214aeb81adbac60c505453:
     Name: "Background"
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

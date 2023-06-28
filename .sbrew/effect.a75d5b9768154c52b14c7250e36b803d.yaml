@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "BackgroundFromSide 11"
 Script: "BackgroundFromSide"
+Multithreaded: No
 Config:
   BackgroundPath:
     Type: "System.String"
@@ -104,6 +105,9 @@ Config:
       InBounce: "32"
       OutBounce: "33"
       InOutBounce: "34"
+  endsDirect:
+    Type: "System.Boolean"
+    Value: "False"
   RandomSeed:
     Type: "System.Int32"
     Value: "0"
@@ -111,6 +115,6 @@ Config:
 Layers:
   4bf5631dcc5449f3b817c6fb6bc9b132:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

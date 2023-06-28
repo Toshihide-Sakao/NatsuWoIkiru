@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "Girl 2"
 Script: "Girl"
+Multithreaded: No
 Config:
   girlPath:
     Type: "System.String"

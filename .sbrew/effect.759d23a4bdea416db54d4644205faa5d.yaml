@@ -1,6 +1,7 @@
 ﻿FormatVersion: 7
 Name: "WithLyrics 1"
 Script: "WithLyrics"
+Multithreaded: No
 Config:
   borderPath:
     Type: "System.String"
@@ -12,6 +13,6 @@ Config:
 Layers:
   914941a5cf524ad48576ba87f6721b63:
     Name: ""
-    OsbLayer: Background
+    OsbLayer: Foreground
     DiffSpecific: No
     Visible: Yes

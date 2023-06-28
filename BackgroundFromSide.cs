@@ -44,6 +44,9 @@ namespace StorybrewScripts
         [Configurable]
         public OsbEasing outEasing = OsbEasing.InExpo;
 
+        [Configurable]
+        public bool endsDirect = false;
+
         public override void Generate()
         {
 
@@ -69,7 +72,15 @@ namespace StorybrewScripts
                     break;
                 case 3:
                     bg.MoveX(inEasing, StartTime, StartTime + fadeStartDelay, -( 1000 / 2) - 107, 320);
-                    bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, ( 1000 / 2) + 747);
+                    if (!endsDirect)
+                    {
+                        bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, ( 1000 / 2) + 747);
+                    }
+                    else
+                    {
+                        // bg.MoveX(outEasing, EndTime, EndTime + fadeEndDelay, 320, ( 1000 / 2) + 747);
+                    }
+                    
                     break;
             }
         }
